@@ -1,0 +1,3779 @@
+./res/xml/backup_rules.xml
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <exclude domain="sharedpref" path="simplenote_preferences.preferences_pb"/>
+</full-backup-content>
+
+./res/xml/data_extraction_rules.xml
+<?xml version="1.0" encoding="utf-8"?><!--
+   Sample data extraction rules file; uncomment and customize as necessary.
+   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
+   for details.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- TODO: Use <include> and <exclude> to control what is backed up.
+        <include .../>
+        <exclude .../>
+        -->
+    </cloud-backup>
+    <!--
+    <device-transfer>
+        <include .../>
+        <exclude .../>
+    </device-transfer>
+    -->
+</data-extraction-rules>./res/values-night/themes.xml
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Simplenote" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>./res/menu/menu_note_detail.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/ic_edit"
+        android:title="Edit"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_delete"
+        android:title="Delete"
+        app:showAsAction="ifRoom" />
+</menu>
+./res/menu/bottom_navigation_menu.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+</menu>
+./res/mipmap-anydpi-v26/ic_launcher.xml
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
+</adaptive-icon>./res/mipmap-anydpi-v26/ic_launcher_round.xml
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
+</adaptive-icon>./res/values/themes.xml
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SimpleNote" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
+./res/values/strings.xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SimpleNote</string>
+</resources>./res/values/colors.xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#666666</color>
+    <color name="light_gray">#999999</color>
+    <color name="red">#F44336</color>
+</resources>
+./res/drawable/ic_add.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+</vector>
+./res/drawable/ic_settings.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M19.14,12.94c0.04,-0.3 0.06,-0.61 0.06,-0.94c0,-0.32 -0.02,-0.64 -0.07,-0.94l2.03,-1.58c0.18,-0.14 0.23,-0.41 0.12,-0.61l-1.92,-3.32c-0.12,-0.22 -0.37,-0.29 -0.59,-0.22l-2.39,0.96c-0.5,-0.38 -1.03,-0.7 -1.62,-0.94L14.4,2.81c-0.04,-0.24 -0.24,-0.41 -0.48,-0.41h-3.84c-0.24,0 -0.43,0.17 -0.47,0.41L9.25,5.35C8.66,5.59 8.12,5.92 7.63,6.29L5.24,5.33c-0.22,-0.08 -0.47,0 -0.59,0.22L2.74,8.87C2.62,9.08 2.66,9.34 2.86,9.48l2.03,1.58C4.84,11.36 4.8,11.69 4.8,12s0.02,0.64 0.07,0.94l-2.03,1.58c-0.18,0.14 -0.23,0.41 -0.12,0.61l1.92,3.32c0.12,0.22 0.37,0.29 0.59,0.22l2.39,-0.96c0.5,0.38 1.03,0.7 1.62,0.94l0.36,2.54c0.05,0.24 0.24,0.41 0.48,0.41h3.84c0.24,0 0.44,-0.17 0.47,-0.41l0.36,-2.54c0.59,-0.24 1.13,-0.56 1.62,-0.94l2.39,0.96c0.22,0.08 0.47,0 0.59,-0.22l1.92,-3.32c0.12,-0.22 0.07,-0.47 -0.12,-0.61L19.14,12.94zM12,15.6c-1.98,0 -3.6,-1.62 -3.6,-3.6s1.62,-3.6 3.6,-3.6s3.6,1.62 3.6,3.6S13.98,15.6 12,15.6z"/>
+</vector>
+./res/drawable/ic_logout.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M17,7l-1.41,1.41L18.17,11H8v2h10.17l-2.58,2.58L17,17l5,-5zM4,5h8V3H4c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h8v-2H4V5z"/>
+</vector>
+./res/drawable/ic_search.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M15.5,14h-0.79l-0.28,-0.27C15.41,12.59 16,11.11 16,9.5 16,5.91 13.09,3 9.5,3S3,5.91 3,9.5 5.91,16 9.5,16c1.61,0 3.09,-0.59 4.23,-1.57l0.27,0.28v0.79l5,4.99L20.49,19l-4.99,-5zM9.5,14C7.01,14 5,11.99 5,9.5S7.01,5 9.5,5 14,7.01 14,9.5 11.99,14 9.5,14z"/>
+</vector>
+./res/drawable/ic_back.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M20,11H7.83l5.59,-5.59L12,4l-8,8 8,8 1.41,-1.41L7.83,13H20v-2z"/>
+</vector>
+./res/drawable/ic_delete.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M6,19c0,1.1 0.9,2 2,2h8c1.1,0 2,-0.9 2,-2V7H6v12zM19,4h-3.5l-1,-1h-5l-1,1H5v2h14V4z"/>
+</vector>
+./res/drawable/ic_lock.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M18,8h-1L17,6c0,-2.76 -2.24,-5 -5,-5S7,3.24 7,6v2L6,8c-1.1,0 -2,0.9 -2,2v10c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2L20,10c0,-1.1 -0.9,-2 -2,-2zM12,17c-1.1,0 -2,-0.9 -2,-2s0.9,-2 2,-2 2,0.9 2,2 -0.9,2 -2,2zM15.1,8L8.9,8L8.9,6c0,-1.71 1.39,-3.1 3.1,-3.1 1.71,0 3.1,1.39 3.1,3.1v2z"/>
+</vector>
+./res/drawable/ic_person.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M12,12c2.21,0 4,-1.79 4,-4s-1.79,-4 -4,-4 -4,1.79 -4,4 1.79,4 4,4zM12,14c-2.67,0 -8,1.34 -8,4v2h16v-2c0,-2.66 -5.33,-4 -8,-4z"/>
+</vector>
+./res/drawable/ic_edit.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M3,17.25V21h3.75L17.81,9.94l-3.75,-3.75L3,17.25zM20.71,7.04c0.39,-0.39 0.39,-1.02 0,-1.41l-2.34,-2.34c-0.39,-0.39 -1.02,-0.39 -1.41,0l-1.83,1.83 3.75,3.75 1.83,-1.83z"/>
+</vector>
+./res/drawable/ic_launcher_background.xml
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#3DDC84"
+        android:pathData="M0,0h108v108h-108z" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M9,0L9,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,0L19,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M29,0L29,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M39,0L39,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M49,0L49,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M59,0L59,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M69,0L69,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M79,0L79,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M89,0L89,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M99,0L99,108"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,9L108,9"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,19L108,19"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,29L108,29"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,39L108,39"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,49L108,49"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,59L108,59"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,69L108,69"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,79L108,79"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,89L108,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,99L108,99"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,29L89,29"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,39L89,39"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,49L89,49"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,59L89,59"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,69L89,69"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,79L89,79"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M29,19L29,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M39,19L39,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M49,19L49,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M59,19L59,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M69,19L69,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M79,19L79,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+</vector>
+./res/drawable/ic_home.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M10,20v-6h4v6h5v-8h3L12,3 2,12h3v8z"/>
+</vector>
+./res/drawable/ic_note.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M3,18h12v-2L3,16v2zM3,6v2h18L21,6L3,6zM3,13h18v-2L3,11v2z"/>
+</vector>
+./res/drawable/ic_chevron_right.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M10,6L8.59,7.41 13.17,12l-4.58,4.59L10,18l6,-6z"/>
+</vector>
+./res/drawable/ic_launcher_foreground.xml
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="85.84757"
+                android:endY="92.4963"
+                android:startX="42.9492"
+                android:startY="49.59793"
+                android:type="linear">
+                <item
+                    android:color="#44000000"
+                    android:offset="0.0" />
+                <item
+                    android:color="#00000000"
+                    android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="nonZero"
+        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
+        android:strokeWidth="1"
+        android:strokeColor="#00000000" />
+</vector>./res/navigation/main_navigation.xml
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.simplenote.presentation.home.HomeFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/action_homeFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.simplenote.presentation.profile.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.simplenote.presentation.note.detail.NoteDetailFragment"
+        android:label="Note Detail">
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_noteDetailFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditNoteFragment"
+        android:name="com.example.simplenote.presentation.note.addedit.AddEditNoteFragment"
+        android:label="Add/Edit Note">
+        <argument
+            android:name="noteId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+</navigation>
+
+./res/navigation/auth_navigation.xml
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.simplenote.presentation.auth.login.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.simplenote.presentation.auth.register.RegisterFragment"
+        android:label="Register" />
+
+</navigation>
+./res/layout/activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/main_navigation" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+./res/layout/item_note.xml
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/light_gray"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
+./res/layout/activity_auth.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_auth"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/auth_navigation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+./res/layout/activity_splash.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_500">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_note"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="SimpleNote"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+./res/layout/fragment_register.xml
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvBackToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Back to Login"
+            android:textColor="@color/purple_500"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Register"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBackToLogin" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="And start taking notes"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilFirstName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="First Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Last Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilFirstName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUsername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilLastName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Email Address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilUsername">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Password"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilRetypePassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Retype Password"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilPassword">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRetypePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:text="Register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilRetypePassword" />
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="Already have an account? Login here"
+            android:textColor="@color/purple_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+./res/layout/fragment_add_edit_note.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="Add Note" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Feel Free to Write Here...">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:minLines="10" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:text="Save Note" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</LinearLayout>
+./res/layout/fragment_profile.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Settings" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_person"
+            app:tint="@color/purple_500" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="APP SETTINGS"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/itemChangePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_lock"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Change Password"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/itemLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_logout"
+            app:tint="@color/red" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Log Out"
+            android:textColor="@color/red"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="48dp"
+        android:text="Taha Notes v1.1"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+</LinearLayout>
+./res/layout/fragment_note_detail.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/menu_note_detail"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="Note" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/gray"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvLastEdited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+./res/layout/fragment_login.xml
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's Login"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="And notes your idea"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:hint="Email Address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubtitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Password"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:text="Login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Or"
+            android:textColor="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="Don't have any account? Register here"
+            android:textColor="@color/purple_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+./res/layout/fragment_home.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Notes" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:boxBackgroundMode="outline"
+            app:startIconDrawable="@drawable/ic_search">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search..."
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNotes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/tvEmptyState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Start Your Journey\n\nEvery big step start with small step.\nNotes your first idea and start\nyour journey!"
+                android:textAlignment="center"
+                android:textColor="@color/gray"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="Add Note"
+        app:srcCompat="@drawable/ic_add" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+./java/com/example/simplenote/presentation/splash/SplashViewModel.kt
+package com.example.simplenote.presentation.splash
+
+import androidx.lifecycle.ViewModel
+import com.example.simplenote.domain.repository.AuthRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+
+@HiltViewModel
+class SplashViewModel @Inject constructor(
+    private val authRepository: AuthRepository
+) : ViewModel() {
+
+    val isLoggedIn: Flow<Boolean> = authRepository.isLoggedIn()
+}./java/com/example/simplenote/presentation/splash/SplashActivity.kt
+package com.example.simplenote.presentation.splash
+
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.example.simplenote.databinding.ActivitySplashBinding
+import com.example.simplenote.presentation.auth.AuthActivity
+import com.example.simplenote.presentation.base.BaseActivity
+import com.example.simplenote.presentation.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
+@SuppressLint("CustomSplashScreen")
+@AndroidEntryPoint
+class SplashActivity : BaseActivity<ActivitySplashBinding>() {
+
+    private val viewModel: SplashViewModel by viewModels()
+
+    override fun getViewBinding() = ActivitySplashBinding.inflate(layoutInflater)
+
+    override fun setupViews() {
+        // Splash screen setup
+    }
+
+    override fun observeData() {
+        lifecycleScope.launch {
+            delay(2000) // Show splash for 2 seconds
+            viewModel.isLoggedIn.collect { isLoggedIn ->
+                if (isLoggedIn) {
+                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                } else {
+                    startActivity(Intent(this@SplashActivity, AuthActivity::class.java))
+                }
+                finish()
+            }
+        }
+    }
+}./java/com/example/simplenote/presentation/home/HomeFragment.kt
+package com.example.simplenote.presentation.home
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.simplenote.R
+import com.example.simplenote.databinding.FragmentHomeBinding
+import com.example.simplenote.presentation.base.BaseFragment
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+
+    private val viewModel: HomeViewModel by viewModels()
+    private lateinit var notesAdapter: NotesAdapter
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentHomeBinding.inflate(inflater, container, false)
+
+    override fun setupViews() {
+        setupRecyclerView()
+
+        // Set up click listener for the Floating Action Button to add a new note
+        binding.fabAddNote.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_addEditNoteFragment)
+        }
+
+        // Set up text change listener for the search input field
+        binding.etSearch.doAfterTextChanged { text ->
+            viewModel.searchNotes(text.toString())
+        }
+
+        // Set up refresh listener for the SwipeRefreshLayout
+        binding.swipeRefresh.setOnRefreshListener {
+            viewModel.refreshNotes()
+        }
+    }
+
+    /**
+     * Initializes and sets up the RecyclerView for displaying notes.
+     */
+    private fun setupRecyclerView() {
+        // Initialize the adapter with a click listener for individual notes
+        notesAdapter = NotesAdapter { note ->
+            // Create a bundle to pass the note ID to the NoteDetailFragment
+            val bundle = Bundle().apply {
+                putInt("noteId", note.id)
+            }
+            // Navigate to the NoteDetailFragment
+            findNavController().navigate(R.id.action_homeFragment_to_noteDetailFragment, bundle)
+        }
+
+        // Apply the adapter and layout manager to the RecyclerView
+        binding.rvNotes.apply {
+            adapter = notesAdapter
+            layoutManager = LinearLayoutManager(context)
+        }
+    }
+
+    override fun observeData() {
+        // Observe the notes flow from the ViewModel
+        lifecycleScope.launch {
+            viewModel.notes.collect { resource ->
+                when (resource) {
+                    is Resource.Loading -> {
+                        // Show progress bar and hide other views when loading
+                        binding.progressBar.visibility = View.VISIBLE
+                        binding.tvEmptyState.visibility = View.GONE
+                        binding.rvNotes.visibility = View.GONE
+                    }
+                    is Resource.Success -> {
+                        // Hide progress bar and stop refresh animation on success
+                        binding.progressBar.visibility = View.GONE
+                        binding.swipeRefresh.isRefreshing = false
+
+                        // Update the RecyclerView with the list of notes
+                        resource.data?.let { notes ->
+                            if (notes.isEmpty()) {
+                                // Show empty state message if no notes are available
+                                binding.tvEmptyState.visibility = View.VISIBLE
+                                binding.rvNotes.visibility = View.GONE
+                            } else {
+                                // Show notes and hide empty state
+                                binding.tvEmptyState.visibility = View.GONE
+                                binding.rvNotes.visibility = View.VISIBLE
+                                notesAdapter.submitList(notes)
+                            }
+                        }
+                    }
+                    is Resource.Error -> {
+                        // Hide progress bar and stop refresh animation on error
+                        binding.progressBar.visibility = View.GONE
+                        binding.swipeRefresh.isRefreshing = false
+                        // Show error message to the user
+                        Toast.makeText(context, resource.message, Toast.LENGTH_SHORT).show()
+
+                        // Even on error, if some data was previously loaded, display it
+                        resource.data?.let { notes ->
+                            if (notes.isEmpty()) {
+                                binding.tvEmptyState.visibility = View.VISIBLE
+                                binding.rvNotes.visibility = View.GONE
+                            } else {
+                                binding.tvEmptyState.visibility = View.GONE
+                                binding.rvNotes.visibility = View.VISIBLE
+                                notesAdapter.submitList(notes)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+./java/com/example/simplenote/presentation/home/NotesAdapter.kt
+// File: presentation/home/NotesAdapter.kt
+package com.example.simplenote.presentation.home
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.simplenote.databinding.ItemNoteBinding
+import com.example.simplenote.domain.model.Note
+import java.text.SimpleDateFormat
+import java.util.*
+
+class NotesAdapter(
+    private val onItemClick: (Note) -> Unit
+) : ListAdapter<Note, NotesAdapter.NoteViewHolder>(NoteDiffCallback()) {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
+        val binding = ItemNoteBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return NoteViewHolder(binding, onItemClick)
+    }
+
+    override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
+        holder.bind(getItem(position))
+    }
+
+    class NoteViewHolder(
+        private val binding: ItemNoteBinding,
+        private val onItemClick: (Note) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) { // Corrected to binding.root
+
+        fun bind(note: Note) {
+            with(binding) {
+                tvTitle.text = note.title
+                tvDescription.text = note.description
+                tvDate.text = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
+                    .format(note.updatedAt)
+
+                root.setOnClickListener { // Corrected to binding.root.setOnClickListener
+                    onItemClick(note)
+                }
+            }
+        }
+    }
+
+    class NoteDiffCallback : DiffUtil.ItemCallback<Note>() {
+        override fun areItemsTheSame(oldItem: Note, newItem: Note): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: Note, newItem: Note): Boolean {
+            return oldItem == newItem
+        }
+    }
+}
+./java/com/example/simplenote/presentation/home/HomeViewModel.kt
+package com.example.simplenote.presentation.home
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.domain.repository.AuthRepository
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+    private val noteRepository: NoteRepository,
+    private val authRepository: AuthRepository // Inject AuthRepository to check login status
+) : ViewModel() {
+
+    private val _notes = MutableStateFlow<Resource<List<Note>>>(Resource.Loading())
+    val notes: StateFlow<Resource<List<Note>>> = _notes
+
+    // SharedFlow to signal navigation to AuthActivity on authentication errors
+    private val _navigateToAuth = MutableSharedFlow<Unit>()
+    val navigateToAuth: SharedFlow<Unit> = _navigateToAuth
+
+    private var currentQuery = ""
+
+    init {
+        // Load notes from local cache immediately to provide initial data
+        loadNotesFromLocal()
+        // Then attempt to refresh notes from the network, but only if logged in
+        viewModelScope.launch {
+            if (authRepository.isLoggedIn().first()) {
+                refreshNotes()
+            } else {
+                // If not logged in, ensure we only show cached notes or empty state
+                // and signal for potential re-authentication if the app somehow landed here unauthenticated
+                _notes.value = Resource.Error("User not logged in.", _notes.value.data)
+                _navigateToAuth.emit(Unit) // Signal to navigate to AuthActivity
+            }
+        }
+    }
+
+    /**
+     * Loads notes from the local database. This should always be attempted
+     * regardless of network status or authentication, providing offline support.
+     */
+    private fun loadNotesFromLocal() {
+        if (currentQuery.isEmpty()) {
+            noteRepository.getAllNotes().onEach { resource ->
+                _notes.value = resource
+                // Check if the resource is an error and if it's an authentication issue
+                if (resource is Resource.Error && !authRepository.isLoggedIn().first()) {
+                    _navigateToAuth.emit(Unit) // Signal to navigate to AuthActivity
+                }
+            }.launchIn(viewModelScope)
+        } else {
+            noteRepository.searchNotes(currentQuery).onEach { resource ->
+                _notes.value = resource
+                // Check if the resource is an error and if it's an authentication issue
+                if (resource is Resource.Error && !authRepository.isLoggedIn().first()) {
+                    _navigateToAuth.emit(Unit) // Signal to navigate to AuthActivity
+                }
+            }.launchIn(viewModelScope)
+        }
+    }
+
+    /**
+     * Initiates a search for notes.
+     * @param query The search query string.
+     */
+    fun searchNotes(query: String) {
+        currentQuery = query
+        loadNotesFromLocal() // Search in local cache
+        // Network search for notes is handled by refreshNotes, which is triggered periodically or manually.
+    }
+
+    /**
+     * Refreshes notes from the remote API. This operation requires authentication.
+     */
+    fun refreshNotes() {
+        viewModelScope.launch {
+            // Only attempt to refresh notes if the user is logged in
+            if (authRepository.isLoggedIn().first()) {
+                val result = noteRepository.refreshNotes()
+                if (result is Resource.Error) {
+                    // If refresh fails (e.g., due to token expiry), notify but keep local data
+                    _notes.value = Resource.Error(result.message ?: "Failed to refresh notes", _notes.value.data)
+                    // If the error is due to authentication, signal redirection
+                    if (!authRepository.isLoggedIn().first()) {
+                        _navigateToAuth.emit(Unit)
+                    }
+                }
+            } else {
+                // If not logged in, do not attempt to refresh from network
+                _notes.value = Resource.Error("Not logged in to refresh notes.", _notes.value.data)
+                _navigateToAuth.emit(Unit) // Signal to navigate to AuthActivity
+            }
+        }
+    }
+}
+./java/com/example/simplenote/presentation/profile/ProfileViewModel.kt
+package com.example.simplenote.presentation.profile
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.simplenote.domain.model.User
+import com.example.simplenote.domain.repository.AuthRepository
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+@HiltViewModel
+class ProfileViewModel @Inject constructor(
+    private val authRepository: AuthRepository
+) : ViewModel() {
+
+    private val _userState = MutableStateFlow<Resource<User>>(Resource.Loading())
+    val userState: StateFlow<Resource<User>> = _userState
+
+    private val _logoutState = MutableStateFlow(false)
+    val logoutState: StateFlow<Boolean> = _logoutState
+
+    /**
+     * Loads user information from the repository. This operation requires authentication.
+     */
+    fun loadUserInfo() {
+        viewModelScope.launch {
+            // Only attempt to load user info if the user is logged in
+            if (authRepository.isLoggedIn().first()) {
+                _userState.value = Resource.Loading()
+                _userState.value = authRepository.getUserInfo()
+            } else {
+                // If not logged in, set state to error or a default unauthenticated state
+                _userState.value = Resource.Error("User not logged in.")
+            }
+        }
+    }
+
+    /**
+     * Logs out the current user, clearing local tokens and user data.
+     */
+    fun logout() {
+        viewModelScope.launch {
+            authRepository.logout()
+            _logoutState.value = true
+        }
+    }
+}
+./java/com/example/simplenote/presentation/profile/ProfileFragment.kt
+package com.example.simplenote.presentation.profile
+
+import android.content.Intent
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.example.simplenote.databinding.FragmentProfileBinding
+import com.example.simplenote.presentation.auth.AuthActivity
+import com.example.simplenote.presentation.base.BaseFragment
+import com.example.simplenote.utils.Resource
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
+class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
+
+    private val viewModel: ProfileViewModel by viewModels()
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentProfileBinding.inflate(inflater, container, false)
+
+    override fun setupViews() {
+        binding.itemLogout.setOnClickListener {
+            showLogoutDialog()
+        }
+
+        binding.itemChangePassword.setOnClickListener {
+            // Navigate to change password screen
+            Toast.makeText(context, "Change password coming soon", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun observeData() {
+        // Initially load user info when the fragment is created/resumed
+        viewModel.loadUserInfo()
+
+        lifecycleScope.launch {
+            viewModel.userState.collect { resource ->
+                when (resource) {
+                    is Resource.Loading -> {
+                        // Show loading indicator (e.g., a ProgressBar or disable UI elements)
+                        // For simplicity, we'll just handle success/error for now.
+                    }
+                    is Resource.Success -> {
+                        resource.data?.let { user ->
+                            // Update UI with user information
+                            binding.tvUserName.text = "${user.firstName} ${user.lastName}"
+                            binding.tvEmail.text = user.email
+                        }
+                    }
+                    is Resource.Error -> {
+                        // Show error message
+                        Toast.makeText(context, resource.message, Toast.LENGTH_SHORT).show()
+                        // If the error indicates "User not logged in" or similar authentication issue,
+                        // redirect to the AuthActivity to force re-authentication.
+                        if (resource.message == "User not logged in." || resource.message?.contains("Unauthorized", ignoreCase = true) == true) {
+                            // Trigger logout to clear any stale tokens and then navigate to AuthActivity
+                            viewModel.logout() // This will set _logoutState.value to true
+                        }
+                    }
+                }
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.logoutState.collect { isLoggedOut ->
+                if (isLoggedOut) {
+                    // If logout is successful (or triggered by an auth error), navigate to AuthActivity
+                    startActivity(Intent(requireContext(), AuthActivity::class.java))
+                    requireActivity().finish() // Finish MainActivity so user can't go back
+                }
+            }
+        }
+    }
+
+    /**
+     * Shows a confirmation dialog for logging out.
+     */
+    private fun showLogoutDialog() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Log Out")
+            .setMessage("Are you sure you want to log out from the application?")
+            .setPositiveButton("Yes") { _, _ ->
+                viewModel.logout()
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+}
+./java/com/example/simplenote/presentation/main/MainActivity.kt
+// File: presentation/main/MainActivity.kt
+package com.example.simplenote.presentation.main
+
+import android.os.Bundle
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
+import com.example.simplenote.R
+import com.example.simplenote.databinding.ActivityMainBinding // Added import
+import com.example.simplenote.presentation.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+
+    private lateinit var navController: NavController
+
+    override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
+
+    override fun setupViews() {
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+        binding.bottomNavigation.setupWithNavController(navController)
+    }
+
+    override fun observeData() {
+        // No specific data to observe
+    }
+}
+./java/com/example/simplenote/presentation/auth/AuthActivity.kt
+// File: presentation/auth/AuthActivity.kt
+package com.example.simplenote.presentation.auth
+
+import com.example.simplenote.databinding.ActivityAuthBinding // Added import
+import com.example.simplenote.presentation.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class AuthActivity : BaseActivity<ActivityAuthBinding>() {
+
+    override fun getViewBinding() = ActivityAuthBinding.inflate(layoutInflater)
+
+    override fun setupViews() {
+        // Navigation will be handled by Navigation Component
+    }
+
+    override fun observeData() {
+        // No specific data to observe at activity level
+    }
+}
+./java/com/example/simplenote/presentation/auth/register/RegisterFragment.kt
+// File: presentation/auth/register/RegisterFragment.kt
+package com.example.simplenote.presentation.auth.register
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.simplenote.databinding.FragmentRegisterBinding // Added import
+import com.example.simplenote.presentation.base.BaseFragment
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
+class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
+
+    private val viewModel: RegisterViewModel by viewModels()
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentRegisterBinding.inflate(inflater, container, false)
+
+    override fun setupViews() {
+        with(binding) {
+            tvBackToLogin.setOnClickListener {
+                findNavController().navigateUp()
+            }
+
+            etFirstName.doAfterTextChanged { tilFirstName.error = null }
+            etLastName.doAfterTextChanged { tilLastName.error = null }
+            etUsername.doAfterTextChanged { tilUsername.error = null }
+            etEmail.doAfterTextChanged { tilEmail.error = null }
+            etPassword.doAfterTextChanged { tilPassword.error = null }
+            etRetypePassword.doAfterTextChanged { tilRetypePassword.error = null }
+
+            btnRegister.setOnClickListener {
+                if (validateInput()) {
+                    viewModel.register(
+                        username = etUsername.text.toString(),
+                        password = etPassword.text.toString(),
+                        email = etEmail.text.toString(),
+                        firstName = etFirstName.text.toString(),
+                        lastName = etLastName.text.toString()
+                    )
+                }
+            }
+
+            tvLogin.setOnClickListener {
+                findNavController().navigateUp()
+            }
+        }
+    }
+
+    override fun observeData() {
+        lifecycleScope.launch {
+            viewModel.registerState.collect { state ->
+                when (state) {
+                    is Resource.Loading -> {
+                        binding.btnRegister.isEnabled = false
+                    }
+                    is Resource.Success -> {
+                        Toast.makeText(context, "Registration successful! Please login.", Toast.LENGTH_SHORT).show()
+                        findNavController().navigateUp()
+                    }
+                    is Resource.Error -> {
+                        binding.btnRegister.isEnabled = true
+                        Toast.makeText(context, state.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+    }
+
+    private fun validateInput(): Boolean {
+        with(binding) {
+            var isValid = true
+
+            if (etFirstName.text.isNullOrEmpty()) {
+                tilFirstName.error = "First name is required"
+                isValid = false
+            }
+
+            if (etLastName.text.isNullOrEmpty()) {
+                tilLastName.error = "Last name is required"
+                isValid = false
+            }
+
+            if (etUsername.text.isNullOrEmpty()) {
+                tilUsername.error = "Username is required"
+                isValid = false
+            }
+
+            if (etEmail.text.isNullOrEmpty()) {
+                tilEmail.error = "Email is required"
+                isValid = false
+            } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(etEmail.text.toString()).matches()) {
+                tilEmail.error = "Invalid email format"
+                isValid = false
+            }
+
+            if (etPassword.text.isNullOrEmpty()) {
+                tilPassword.error = "Password is required"
+                isValid = false
+            } else if (etPassword.text.toString().length < 8) {
+                tilPassword.error = "Password must be at least 8 characters"
+                isValid = false
+            }
+
+            if (etRetypePassword.text.toString() != etPassword.text.toString()) {
+                tilRetypePassword.error = "Passwords do not match"
+                isValid = false
+            }
+
+            return isValid
+        }
+    }
+}
+./java/com/example/simplenote/presentation/auth/register/RegisterViewModel.kt
+package com.example.simplenote.presentation.auth.register
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.simplenote.domain.repository.AuthRepository
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+@HiltViewModel
+class RegisterViewModel @Inject constructor(
+    private val authRepository: AuthRepository
+) : ViewModel() {
+
+    private val _registerState = MutableStateFlow<Resource<Unit>>(Resource.Success(Unit))
+    val registerState: StateFlow<Resource<Unit>> = _registerState
+
+    fun register(
+        username: String,
+        password: String,
+        email: String,
+        firstName: String,
+        lastName: String
+    ) {
+        viewModelScope.launch {
+            _registerState.value = Resource.Loading()
+            _registerState.value = authRepository.register(username, password, email, firstName, lastName)
+        }
+    }
+}./java/com/example/simplenote/presentation/auth/login/LoginFragment.kt
+// File: presentation/auth/login/LoginFragment.kt
+package com.example.simplenote.presentation.auth.login
+
+import android.content.Intent
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.simplenote.R
+import com.example.simplenote.databinding.FragmentLoginBinding // Added import
+import com.example.simplenote.presentation.base.BaseFragment
+import com.example.simplenote.presentation.main.MainActivity
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
+class LoginFragment : BaseFragment<FragmentLoginBinding>() {
+
+    private val viewModel: LoginViewModel by viewModels()
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentLoginBinding.inflate(inflater, container, false)
+
+    override fun setupViews() {
+        with(binding) {
+            etEmail.doAfterTextChanged { /* it: Editable? */
+                tilEmail.error = null
+            }
+
+            etPassword.doAfterTextChanged { /* it: Editable? */
+                tilPassword.error = null
+            }
+
+            btnLogin.setOnClickListener {
+                val username = etEmail.text.toString()
+                val password = etPassword.text.toString()
+
+                if (validateInput(username, password)) {
+                    viewModel.login(username, password)
+                }
+            }
+
+            tvRegister.setOnClickListener {
+                findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            }
+        }
+    }
+
+    override fun observeData() {
+        lifecycleScope.launch {
+            viewModel.loginState.collect { state ->
+                when (state) {
+                    is Resource.Loading -> {
+                        binding.btnLogin.isEnabled = false
+                    }
+                    is Resource.Success -> {
+                        startActivity(Intent(requireContext(), MainActivity::class.java))
+                        requireActivity().finish()
+                    }
+                    is Resource.Error -> {
+                        binding.btnLogin.isEnabled = true
+                        Toast.makeText(context, state.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+    }
+
+    private fun validateInput(username: String, password: String): Boolean {
+        var isValid = true
+
+        if (username.isEmpty()) {
+            binding.tilEmail.error = "Username is required"
+            isValid = false
+        }
+
+        if (password.isEmpty()) {
+            binding.tilPassword.error = "Password is required"
+            isValid = false
+        }
+
+        return isValid
+    }
+}
+./java/com/example/simplenote/presentation/auth/login/LoginViewModel.kt
+package com.example.simplenote.presentation.auth.login
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.simplenote.domain.repository.AuthRepository
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+    private val authRepository: AuthRepository
+) : ViewModel() {
+
+    private val _loginState = MutableStateFlow<Resource<Unit>>(Resource.Success(Unit))
+    val loginState: StateFlow<Resource<Unit>> = _loginState
+
+    fun login(username: String, password: String) {
+        viewModelScope.launch {
+            _loginState.value = Resource.Loading()
+            _loginState.value = authRepository.login(username, password)
+        }
+    }
+}
+./java/com/example/simplenote/presentation/note/addedit/AddEditNoteViewModel.kt
+// File: presentation/note/addedit/AddEditNoteViewModel.kt
+package com.example.simplenote.presentation.note.addedit
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import java.util.Date // Added import
+
+import javax.inject.Inject
+
+@HiltViewModel
+class AddEditNoteViewModel @Inject constructor(
+    private val noteRepository: NoteRepository
+) : ViewModel() {
+
+    private val _noteState = MutableStateFlow<Resource<Note>>(Resource.Success(
+        Note(0, "", "", Date(), Date(), "", "")
+    ))
+    val noteState: StateFlow<Resource<Note>> = _noteState
+
+    private val _saveState = MutableStateFlow<Resource<Note>>(Resource.Success(
+        Note(0, "", "", Date(), Date(), "", "")
+    ))
+    val saveState: StateFlow<Resource<Note>> = _saveState
+
+    fun loadNote(id: Int) {
+        viewModelScope.launch {
+            _noteState.value = Resource.Loading()
+            _noteState.value = noteRepository.getNote(id)
+        }
+    }
+
+    fun createNote(title: String, description: String) {
+        viewModelScope.launch {
+            _saveState.value = Resource.Loading()
+            _saveState.value = noteRepository.createNote(title, description)
+        }
+    }
+
+    fun updateNote(id: Int, title: String, description: String) {
+        viewModelScope.launch {
+            _saveState.value = Resource.Loading()
+            _saveState.value = noteRepository.updateNote(id, title, description)
+        }
+    }
+}
+./java/com/example/simplenote/presentation/note/addedit/AddEditNoteFragment.kt
+package com.example.simplenote.presentation.note.addedit
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.simplenote.databinding.FragmentAddEditNoteBinding
+import com.example.simplenote.presentation.base.BaseFragment
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
+class AddEditNoteFragment : BaseFragment<FragmentAddEditNoteBinding>() {
+
+    private val viewModel: AddEditNoteViewModel by viewModels()
+    private var noteId: Int? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Retrieve noteId from arguments, if it exists and is not 0
+        noteId = arguments?.getInt("noteId")?.takeIf { it != 0 }
+    }
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentAddEditNoteBinding.inflate(inflater, container, false)
+
+    override fun setupViews() {
+        // Set up navigation icon click listener to go back
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        // Set toolbar title based on whether it's an add or edit operation
+        noteId?.let { id ->
+            binding.toolbar.title = "Edit Note"
+            viewModel.loadNote(id) // Load note data if in edit mode
+        } ?: run {
+            binding.toolbar.title = "Add Note"
+        }
+
+        // Set up click listener for the save button
+        binding.btnSave.setOnClickListener {
+            val title = binding.etTitle.text.toString()
+            val description = binding.etDescription.text.toString()
+
+            // Validate input before proceeding
+            if (validateInput(title, description)) {
+                if (noteId != null) {
+                    viewModel.updateNote(noteId!!, title, description) // Update existing note
+                } else {
+                    viewModel.createNote(title, description) // Create new note
+                }
+            }
+        }
+    }
+
+    override fun observeData() {
+        // Observe the noteState for loading existing note data
+        lifecycleScope.launch {
+            viewModel.noteState.collect { resource ->
+                when (resource) {
+                    is Resource.Loading -> {
+                        binding.progressBar.visibility = View.VISIBLE
+                        binding.btnSave.isEnabled = false // Disable save button during loading
+                    }
+                    is Resource.Success -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.btnSave.isEnabled = true // Enable save button after loading
+
+                        // Populate fields if data is available and it's an edit operation
+                        resource.data?.let { note ->
+                            if (noteId != null) { // Only set text if we are editing an existing note
+                                binding.etTitle.setText(note.title)
+                                binding.etDescription.setText(note.description)
+                            }
+                        }
+                    }
+                    is Resource.Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.btnSave.isEnabled = true // Enable save button on error
+                        Toast.makeText(context, resource.message, Toast.LENGTH_SHORT).show()
+                        // If there's an error loading an existing note, navigate back
+                        if (noteId != null) {
+                            findNavController().navigateUp()
+                        }
+                    }
+                }
+            }
+        }
+
+        // Observe the saveState for create/update note operations
+        lifecycleScope.launch {
+            viewModel.saveState.collect { resource ->
+                when (resource) {
+                    is Resource.Loading -> {
+                        binding.progressBar.visibility = View.VISIBLE
+                        binding.btnSave.isEnabled = false // Disable save button during saving
+                    }
+                    is Resource.Success -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.btnSave.isEnabled = true // Enable save button after saving
+                        Toast.makeText(
+                            context,
+                            if (noteId != null) "Note updated successfully" else "Note created successfully",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        findNavController().navigateUp() // Navigate back after successful save
+                    }
+                    is Resource.Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.btnSave.isEnabled = true // Enable save button on error
+                        Toast.makeText(context, resource.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Validates the input fields (title and description).
+     * @return true if inputs are valid, false otherwise.
+     */
+    private fun validateInput(title: String, description: String): Boolean {
+        var isValid = true
+        if (title.isEmpty()) {
+            binding.tilTitle.error = "Title is required"
+            isValid = false
+        } else {
+            binding.tilTitle.error = null
+        }
+        if (description.isEmpty()) {
+            binding.tilDescription.error = "Description is required"
+            isValid = false
+        } else {
+            binding.tilDescription.error = null
+        }
+        return isValid
+    }
+}
+./java/com/example/simplenote/presentation/note/detail/NoteDetailFragment.kt
+// File: presentation/note/detail/NoteDetailFragment.kt
+package com.example.simplenote.presentation.note.detail
+
+import android.os.Bundle
+import android.view.*
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.simplenote.R
+import com.example.simplenote.databinding.FragmentNoteDetailBinding // Added import
+import com.example.simplenote.presentation.base.BaseFragment
+import com.example.simplenote.utils.Resource
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
+
+@AndroidEntryPoint
+class NoteDetailFragment : BaseFragment<FragmentNoteDetailBinding>() {
+
+    private val viewModel: NoteDetailViewModel by viewModels()
+    private var noteId: Int = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+        noteId = arguments?.getInt("noteId") ?: 0
+    }
+
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentNoteDetailBinding.inflate(inflater, container, false)
+
+    override fun setupViews() {
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        binding.toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_edit -> {
+                    val bundle = Bundle().apply {
+                        putInt("noteId", noteId)
+                    }
+                    findNavController().navigate(
+                        R.id.action_noteDetailFragment_to_addEditNoteFragment,
+                        bundle
+                    )
+                    true
+                }
+                R.id.action_delete -> {
+                    showDeleteConfirmation()
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    override fun observeData() {
+        viewModel.loadNote(noteId)
+
+        lifecycleScope.launch {
+            viewModel.noteState.collect { resource ->
+                when (resource) {
+                    is Resource.Loading -> {
+                        binding.progressBar.visibility = View.VISIBLE
+                        binding.contentLayout.visibility = View.GONE
+                    }
+                    is Resource.Success -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.contentLayout.visibility = View.VISIBLE
+
+                        resource.data?.let { note ->
+                            binding.tvTitle.text = note.title
+                            binding.tvDescription.text = note.description
+                            binding.tvLastEdited.text = "Last edited on ${
+                                SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault())
+                                    .format(note.updatedAt)
+                            }"
+                        }
+                    }
+                    is Resource.Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        Toast.makeText(context, resource.message, Toast.LENGTH_SHORT).show()
+                        findNavController().navigateUp()
+                    }
+                }
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.deleteState.collect { resource ->
+                when (resource) {
+                    is Resource.Success -> {
+                        Toast.makeText(context, "Note deleted successfully", Toast.LENGTH_SHORT).show()
+                        findNavController().navigateUp()
+                    }
+                    is Resource.Error -> {
+                        Toast.makeText(context, resource.message, Toast.LENGTH_SHORT).show()
+                    }
+                    else -> {}
+                }
+            }
+        }
+    }
+
+    private fun showDeleteConfirmation() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Delete Note")
+            .setMessage("Are you sure you want to delete this note?")
+            .setPositiveButton("Delete") { _, _ ->
+                viewModel.deleteNote(noteId)
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+}
+./java/com/example/simplenote/presentation/note/detail/NoteDetailViewModel.kt
+package com.example.simplenote.presentation.note.detail
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+@HiltViewModel
+class NoteDetailViewModel @Inject constructor(
+    private val noteRepository: NoteRepository
+) : ViewModel() {
+    
+    private val _noteState = MutableStateFlow<Resource<Note>>(Resource.Loading())
+    val noteState: StateFlow<Resource<Note>> = _noteState
+    
+    private val _deleteState = MutableStateFlow<Resource<Unit>>(Resource.Success(Unit))
+    val deleteState: StateFlow<Resource<Unit>> = _deleteState
+    
+    fun loadNote(id: Int) {
+        viewModelScope.launch {
+            _noteState.value = Resource.Loading()
+            _noteState.value = noteRepository.getNote(id)
+        }
+    }
+    
+    fun deleteNote(id: Int) {
+        viewModelScope.launch {
+            _deleteState.value = Resource.Loading()
+            _deleteState.value = noteRepository.deleteNote(id)
+        }
+    }
+}
+./java/com/example/simplenote/presentation/base/BaseActivity.kt
+package com.example.simplenote.presentation.base
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
+
+abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
+
+    private var _binding: VB? = null
+    protected val binding get() = _binding!!
+
+    abstract fun getViewBinding(): VB
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        _binding = getViewBinding()
+        setContentView(binding.root)
+        setupViews()
+        observeData()
+    }
+
+    abstract fun setupViews()
+    abstract fun observeData()
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+}./java/com/example/simplenote/presentation/base/BaseFragment.kt
+package com.example.simplenote.presentation.base
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.viewbinding.ViewBinding
+
+abstract class BaseFragment<VB : ViewBinding> : Fragment() {
+
+    private var _binding: VB? = null
+    protected val binding get() = _binding!!
+
+    abstract fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?): VB
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = getViewBinding(inflater, container)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupViews()
+        observeData()
+    }
+
+    abstract fun setupViews()
+    abstract fun observeData()
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}./java/com/example/simplenote/di/UnauthorizedApi.kt
+package com.example.simplenote.di
+
+import javax.inject.Qualifier
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class UnauthorizedApi
+./java/com/example/simplenote/di/NetworkModule.kt
+package com.example.simplenote.di
+
+import com.example.simplenote.data.local.PreferencesManager
+import com.example.simplenote.data.remote.api.SimpleNoteApi
+import com.example.simplenote.data.remote.interceptors.AuthInterceptor
+import com.example.simplenote.data.remote.interceptors.TokenAuthenticator
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
+
+// Custom qualifier for Retrofit instances that do NOT use the AuthInterceptor/TokenAuthenticator
+// This is used for the refresh token API call within the TokenAuthenticator itself to prevent circular dependencies.
+// The annotation class UnauthorizedApi is defined in its own file (UnauthorizedApi.kt)
+// and should not be redeclared here.
+
+@Module
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
+
+    @Provides
+    @Singleton
+    fun provideAuthInterceptor(preferencesManager: PreferencesManager): AuthInterceptor {
+        return AuthInterceptor(preferencesManager)
+    }
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(
+        authInterceptor: AuthInterceptor,
+        tokenAuthenticator: TokenAuthenticator
+    ): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(authInterceptor)
+            .authenticator(tokenAuthenticator)
+            .addInterceptor(HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            })
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    @UnauthorizedApi
+    fun provideUnauthorizedOkHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            })
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideSimpleNoteApi(okHttpClient: OkHttpClient): SimpleNoteApi {
+        return Retrofit.Builder()
+            .baseUrl("http://192.168.0.245:8000/")
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(SimpleNoteApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    @UnauthorizedApi
+    fun provideUnauthorizedSimpleNoteApi(@UnauthorizedApi okHttpClient: OkHttpClient): SimpleNoteApi {
+        return Retrofit.Builder()
+            .baseUrl("http://192.168.0.245:8000/")
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(SimpleNoteApi::class.java)
+    }
+}
+./java/com/example/simplenote/di/AppModule.kt
+package com.example.simplenote.di
+
+import android.content.Context
+import androidx.room.Room
+import com.example.simplenote.data.local.PreferencesManager
+import com.example.simplenote.data.local.database.SimpleNoteDatabase
+import com.example.simplenote.data.remote.api.SimpleNoteApi // Keep this import as it's used for repositories
+import com.example.simplenote.data.local.dao.UserDao
+import com.example.simplenote.data.local.dao.NoteDao
+import com.example.simplenote.data.repository.AuthRepositoryImpl
+import com.example.simplenote.data.repository.NoteRepositoryImpl
+import com.example.simplenote.domain.repository.AuthRepository
+import com.example.simplenote.domain.repository.NoteRepository
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
+// Removed imports related to OkHttpClient, Retrofit, etc., as they are now handled in NetworkModule
+
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+object AppModule {
+
+    @Provides
+    @Singleton
+    fun provideSimpleNoteDatabase(
+        @ApplicationContext context: Context
+    ): SimpleNoteDatabase {
+        return Room.databaseBuilder(
+            context,
+            SimpleNoteDatabase::class.java,
+            "simplenote_db"
+        ).fallbackToDestructiveMigration().build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideNoteDao(database: SimpleNoteDatabase) = database.noteDao()
+
+    @Provides
+    @Singleton
+    fun provideUserDao(database: SimpleNoteDatabase) = database.userDao()
+
+    // The provideOkHttpClient method has been moved to NetworkModule.kt
+    // @Provides
+    // @Singleton
+    // fun provideOkHttpClient(...) { ... }
+
+    // The provideSimpleNoteApi method has been moved to NetworkModule.kt
+    // @Provides
+    // @Singleton
+    // fun provideSimpleNoteApi(...) { ... }
+
+    @Provides
+    @Singleton
+    fun provideAuthRepository(
+        api: SimpleNoteApi, // SimpleNoteApi is now provided by NetworkModule
+        userDao: UserDao,
+        preferencesManager: PreferencesManager
+    ): AuthRepository {
+        return AuthRepositoryImpl(api, userDao, preferencesManager)
+    }
+
+    @Provides
+    @Singleton
+    fun provideNoteRepository(
+        api: SimpleNoteApi, // SimpleNoteApi is now provided by NetworkModule
+        noteDao: NoteDao
+    ): NoteRepository {
+        return NoteRepositoryImpl(api, noteDao)
+    }
+}
+./java/com/example/simplenote/domain/usecase/auth/GetUserInfoUseCase.kt
+package com.example.simplenote.domain.usecase.auth
+
+import com.example.simplenote.domain.model.User
+import com.example.simplenote.domain.repository.AuthRepository
+import com.example.simplenote.utils.Resource
+import javax.inject.Inject
+
+class GetUserInfoUseCase @Inject constructor(
+    private val authRepository: AuthRepository
+) {
+    suspend operator fun invoke(): Resource<User> {
+        return authRepository.getUserInfo()
+    }
+}
+./java/com/example/simplenote/domain/usecase/auth/LoginUseCase.kt
+package com.example.simplenote.domain.usecase.auth
+
+import com.example.simplenote.domain.repository.AuthRepository
+import com.example.simplenote.utils.Resource
+import javax.inject.Inject
+
+class LoginUseCase @Inject constructor(
+    private val authRepository: AuthRepository
+) {
+    suspend operator fun invoke(username: String, password: String): Resource<Unit> {
+        return authRepository.login(username, password)
+    }
+}
+./java/com/example/simplenote/domain/usecase/auth/RegisterUseCase.kt
+package com.example.simplenote.domain.usecase.auth
+
+import com.example.simplenote.domain.repository.AuthRepository
+import com.example.simplenote.utils.Resource
+import javax.inject.Inject
+
+class RegisterUseCase @Inject constructor(
+    private val authRepository: AuthRepository
+) {
+    suspend operator fun invoke(
+        username: String,
+        password: String,
+        email: String,
+        firstName: String,
+        lastName: String
+    ): Resource<Unit> {
+        return authRepository.register(username, password, email, firstName, lastName)
+    }
+}
+./java/com/example/simplenote/domain/usecase/auth/LogoutUseCase.kt
+package com.example.simplenote.domain.usecase.auth
+
+import com.example.simplenote.domain.repository.AuthRepository
+import javax.inject.Inject
+
+class LogoutUseCase @Inject constructor(
+    private val authRepository: AuthRepository
+) {
+    suspend operator fun invoke() {
+        authRepository.logout()
+    }
+}
+./java/com/example/simplenote/domain/usecase/note/GetNotesUseCase.kt
+package com.example.simplenote.domain.usecase.note
+
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+
+class GetNotesUseCase @Inject constructor(
+    private val noteRepository: NoteRepository
+) {
+    operator fun invoke(): Flow<Resource<List<Note>>> {
+        return noteRepository.getAllNotes()
+    }
+}
+./java/com/example/simplenote/domain/usecase/note/GetNoteUseCase.kt
+package com.example.simplenote.domain.usecase.note
+
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import javax.inject.Inject
+
+class GetNoteUseCase @Inject constructor(
+    private val noteRepository: NoteRepository
+) {
+    suspend operator fun invoke(id: Int): Resource<Note> {
+        return noteRepository.getNote(id)
+    }
+}
+./java/com/example/simplenote/domain/usecase/note/SearchNotesUseCase.kt
+package com.example.simplenote.domain.usecase.note
+
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+
+class SearchNotesUseCase @Inject constructor(
+    private val noteRepository: NoteRepository
+) {
+    operator fun invoke(query: String): Flow<Resource<List<Note>>> {
+        return noteRepository.searchNotes(query)
+    }
+}
+./java/com/example/simplenote/domain/usecase/note/DeleteNoteUseCase.kt
+package com.example.simplenote.domain.usecase.note
+
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import javax.inject.Inject
+
+class DeleteNoteUseCase @Inject constructor(
+    private val noteRepository: NoteRepository
+) {
+    suspend operator fun invoke(id: Int): Resource<Unit> {
+        return noteRepository.deleteNote(id)
+    }
+}
+./java/com/example/simplenote/domain/usecase/note/UpdateNoteUseCase.kt
+package com.example.simplenote.domain.usecase.note
+
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import javax.inject.Inject
+
+class UpdateNoteUseCase @Inject constructor(
+    private val noteRepository: NoteRepository
+) {
+    suspend operator fun invoke(id: Int, title: String, description: String): Resource<Note> {
+        return noteRepository.updateNote(id, title, description)
+    }
+}
+./java/com/example/simplenote/domain/usecase/note/CreateNoteUseCase.kt
+package com.example.simplenote.domain.usecase.note
+
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import javax.inject.Inject
+
+class CreateNoteUseCase @Inject constructor(
+    private val noteRepository: NoteRepository
+) {
+    suspend operator fun invoke(title: String, description: String): Resource<Note> {
+        return noteRepository.createNote(title, description)
+    }
+}
+./java/com/example/simplenote/domain/model/User.kt
+package com.example.simplenote.domain.model
+
+data class User(
+    val id: Int,
+    val username: String,
+    val email: String,
+    val firstName: String,
+    val lastName: String
+)./java/com/example/simplenote/domain/model/Note.kt
+package com.example.simplenote.domain.model
+
+import java.util.Date
+
+data class Note(
+    val id: Int,
+    val title: String,
+    val description: String,
+    val createdAt: Date,
+    val updatedAt: Date,
+    val creatorName: String,
+    val creatorUsername: String
+)./java/com/example/simplenote/utils/Constants.kt
+package com.example.simplenote.utils
+
+object Constants {
+    const val DATABASE_NAME = "simplenote_database"
+    const val PREFERENCES_NAME = "simplenote_preferences"
+    const val PAGE_SIZE = 20
+}
+./java/com/example/simplenote/utils/NetworkBoundResource.kt
+package com.example.simplenote.utils
+
+import kotlinx.coroutines.flow.*
+
+inline fun <ResultType, RequestType> networkBoundResource(
+    crossinline query: () -> Flow<ResultType>,
+    crossinline fetch: suspend () -> RequestType,
+    crossinline saveFetchResult: suspend (RequestType) -> Unit,
+    crossinline shouldFetch: (ResultType) -> Boolean = { true }
+) = flow {
+    val data = query().first()
+
+    val flow = if (shouldFetch(data)) {
+        emit(Resource.Loading(data))
+
+        try {
+            saveFetchResult(fetch())
+            query().map { Resource.Success(it) }
+        } catch (throwable: Throwable) {
+            query().map { Resource.Error(throwable.message ?: "Unknown error", it) }
+        }
+    } else {
+        query().map { Resource.Success(it) }
+    }
+
+    emitAll(flow)
+}
+./java/com/example/simplenote/utils/DateFormatter.kt
+package com.example.simplenote.utils
+
+import java.text.SimpleDateFormat
+import java.util.*
+
+object DateFormatter {
+    private val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault()).apply {
+        timeZone = TimeZone.getTimeZone("UTC")
+    }
+    
+    private val displayDateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
+    private val displayDateTimeFormat = SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault())
+    
+    fun parseDate(dateString: String): Date {
+        return try {
+            dateFormat.parse(dateString) ?: Date()
+        } catch (e: Exception) {
+            Date()
+        }
+    }
+    
+    fun formatDate(date: Date): String {
+        return displayDateFormat.format(date)
+    }
+    
+    fun formatDateTime(date: Date): String {
+        return displayDateTimeFormat.format(date)
+    }
+}
+./java/com/example/simplenote/utils/Extensions.kt
+package com.example.simplenote.utils
+
+import com.example.simplenote.data.local.entities.NoteEntity
+import com.example.simplenote.data.remote.dto.NoteResponse
+import com.example.simplenote.domain.model.Note
+import java.text.SimpleDateFormat
+import java.util.*
+
+fun NoteResponse.toNoteEntity(): NoteEntity {
+    return NoteEntity(
+        id = id,
+        title = title,
+        description = description,
+        createdAt = createdAt.toDate(),
+        updatedAt = updatedAt.toDate(),
+        creatorName = creatorName,
+        creatorUsername = creatorUsername,
+        isSynced = true
+    )
+}
+
+fun NoteEntity.toNote(): Note {
+    return Note(
+        id = id,
+        title = title,
+        description = description,
+        createdAt = createdAt,
+        updatedAt = updatedAt,
+        creatorName = creatorName,
+        creatorUsername = creatorUsername
+    )
+}
+
+fun String.toDate(): Date {
+    return try {
+        SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault()).parse(this) ?: Date()
+    } catch (e: Exception) {
+        Date()
+    }
+}
+./java/com/example/simplenote/utils/Resource.kt
+package com.example.simplenote.utils
+
+sealed class Resource<T>(
+    val data: T? = null,
+    val message: String? = null
+) {
+    class Success<T>(data: T) : Resource<T>(data)
+    class Error<T>(message: String, data: T? = null) : Resource<T>(data, message)
+    class Loading<T>(data: T? = null) : Resource<T>(data)
+}./java/com/example/simplenote/data/remote/api/SimpleNoteApi.kt
+package com.example.simplenote.data.remote.api
+
+import com.example.simplenote.data.remote.dto.*
+import retrofit2.http.*
+
+interface SimpleNoteApi {
+
+    // Auth endpoints
+    @POST("api/auth/register/")
+    suspend fun register(@Body request: RegisterRequest): RegisterResponse
+
+    @POST("api/auth/token/")
+    suspend fun login(@Body request: LoginRequest): TokenResponse
+
+    @POST("api/auth/token/refresh/")
+    suspend fun refreshToken(@Body request: RefreshTokenRequest): AccessTokenResponse
+
+    @GET("api/auth/userinfo/")
+    suspend fun getUserInfo(): UserInfoResponse
+
+    // Notes endpoints
+    @GET("api/notes/")
+    suspend fun getNotes(
+        @Query("page") page: Int? = null,
+        @Query("page_size") pageSize: Int? = null
+    ): NotesListResponse
+
+    @POST("api/notes/")
+    suspend fun createNote(@Body request: CreateNoteRequest): NoteResponse
+
+    @GET("api/notes/{id}/")
+    suspend fun getNote(@Path("id") id: Int): NoteResponse
+
+    @PUT("api/notes/{id}/")
+    suspend fun updateNote(
+        @Path("id") id: Int,
+        @Body request: UpdateNoteRequest
+    ): NoteResponse
+
+    @PATCH("api/notes/{id}/")
+    suspend fun partialUpdateNote(
+        @Path("id") id: Int,
+        @Body request: Map<String, String>
+    ): NoteResponse
+
+    @DELETE("api/notes/{id}/")
+    suspend fun deleteNote(@Path("id") id: Int)
+
+    @GET("api/notes/filter")
+    suspend fun filterNotes(
+        @Query("title") title: String? = null,
+        @Query("description") description: String? = null,
+        @Query("page") page: Int? = null,
+        @Query("page_size") pageSize: Int? = null
+    ): NotesListResponse
+}./java/com/example/simplenote/data/remote/interceptors/AuthInterceptor.kt
+package com.example.simplenote.data.remote.interceptors
+
+import com.example.simplenote.data.local.PreferencesManager
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
+import okhttp3.Interceptor
+import okhttp3.Response
+import javax.inject.Inject
+
+class AuthInterceptor @Inject constructor(
+    private val preferencesManager: PreferencesManager
+) : Interceptor {
+
+    override fun intercept(chain: Interceptor.Chain): Response {
+        val originalRequest = chain.request()
+
+        // Retrieve the access token from preferences synchronously using runBlocking.
+        // This is necessary because interceptors are synchronous.
+        val token = runBlocking {
+            preferencesManager.accessToken.first()
+        }
+
+        // Define which authentication-related endpoints should NOT receive an Authorization header.
+        // Login and Register endpoints typically do not require an access token.
+        // The userinfo endpoint, however, usually requires an access token.
+        // We explicitly check for the exact paths for login and register to avoid
+        // excluding userinfo which is also under /api/auth/ but requires auth.
+        val path = originalRequest.url.encodedPath
+        val isLoginOrRegisterEndpoint = path.endsWith("/api/auth/token/") ||
+                path.endsWith("/api/auth/register/")
+
+        // If a token exists and the current request is not for a login/register endpoint,
+        // add the Authorization header.
+        return if (token != null && !isLoginOrRegisterEndpoint) {
+            val authenticatedRequest = originalRequest.newBuilder()
+                .header("Authorization", "Bearer $token")
+                .build()
+            chain.proceed(authenticatedRequest)
+        } else {
+            // Proceed with the original request if no token is available or if it's a login/register endpoint.
+            chain.proceed(originalRequest)
+        }
+    }
+}
+./java/com/example/simplenote/data/remote/interceptors/TokenAuthenticator.kt
+package com.example.simplenote.data.remote.interceptors
+
+import com.example.simplenote.data.local.PreferencesManager
+import com.example.simplenote.data.remote.api.SimpleNoteApi
+import com.example.simplenote.data.remote.dto.RefreshTokenRequest
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
+import okhttp3.Authenticator
+import okhttp3.Request
+import okhttp3.Response
+import okhttp3.Route
+import javax.inject.Inject
+import javax.inject.Singleton
+
+/**
+ * [TokenAuthenticator] is an OkHttp Authenticator that handles refreshing access tokens
+ * when a 401 Unauthorized response is received from the server.
+ * It attempts to use the refresh token to obtain a new access token and retries the original request.
+ * If the refresh fails, it clears the user's session.
+ */
+@Singleton
+class TokenAuthenticator @Inject constructor(
+    private val preferencesManager: PreferencesManager
+    // IMPORTANT: Do NOT inject SimpleNoteApi directly here to avoid circular dependency.
+    // A new Retrofit instance for refresh calls is created within authenticate().
+) : Authenticator {
+
+    override fun authenticate(route: Route?, response: Response): Request? {
+        // Avoid infinite loops if a refresh request itself returns 401
+        if (response.request.url.encodedPath.contains("/api/auth/token/refresh/")) {
+            return null // Do not retry a refresh token request if it fails
+        }
+
+        // If the original request did not have an Authorization header,
+        // it means it wasn't an authenticated request, so we don't try to refresh.
+        if (response.request.header("Authorization") == null) {
+            return null
+        }
+
+        // Get the refresh token synchronously from preferences
+        val refreshToken = runBlocking { preferencesManager.refreshToken.first() }
+
+        // If no refresh token is available, clear all tokens and return null to indicate no retry.
+        if (refreshToken == null) {
+            runBlocking { preferencesManager.clearAll() } // Clear all tokens to force re-login
+            return null
+        }
+
+        // Synchronously call the refresh token API to get a new access token
+        val newAccessToken = runBlocking {
+            try {
+                // Create a new, minimal Retrofit instance specifically for the refresh token call.
+                // This prevents circular dependencies with the main OkHttpClient and its interceptors/authenticators.
+                val refreshApi = retrofit2.Retrofit.Builder()
+                    .baseUrl("http://192.168.0.245:8000/") // Ensure this base URL matches your API
+                    .addConverterFactory(retrofit2.converter.gson.GsonConverterFactory.create())
+                    .build()
+                    .create(SimpleNoteApi::class.java)
+
+                val refreshResponse = refreshApi.refreshToken(RefreshTokenRequest(refreshToken))
+                // Save the new access token and the existing refresh token
+                preferencesManager.saveTokens(refreshResponse.access, refreshToken)
+                refreshResponse.access
+            } catch (e: Exception) {
+                // If refresh fails (e.g., refresh token is expired or invalid),
+                // clear all tokens to force a full re-login.
+                preferencesManager.clearAll()
+                null // Indicate that no new request should be made
+            }
+        }
+
+        return if (newAccessToken != null) {
+            // If a new access token was successfully obtained,
+            // retry the original request with the new token.
+            response.request.newBuilder()
+                .header("Authorization", "Bearer $newAccessToken")
+                .build()
+        } else {
+            // If token refresh failed (newAccessToken is null), do not retry the request.
+            // The original request will ultimately fail with 401, and the app should
+            // handle this by redirecting to the login screen.
+            null
+        }
+    }
+}
+./java/com/example/simplenote/data/remote/dto/UserDto.kt
+package com.example.simplenote.data.remote.dto
+
+import com.google.gson.annotations.SerializedName
+
+data class UserInfoResponse(
+    val id: Int,
+    val username: String,
+    val email: String,
+    @SerializedName("first_name")
+    val firstName: String,
+    @SerializedName("last_name")
+    val lastName: String
+)./java/com/example/simplenote/data/remote/dto/NoteDto.kt
+package com.example.simplenote.data.remote.dto
+
+import com.google.gson.annotations.SerializedName
+
+data class NoteResponse(
+    val id: Int,
+    val title: String,
+    val description: String,
+    @SerializedName("created_at")
+    val createdAt: String,
+    @SerializedName("updated_at")
+    val updatedAt: String,
+    @SerializedName("creator_name")
+    val creatorName: String,
+    @SerializedName("creator_username")
+    val creatorUsername: String
+)
+
+data class NotesListResponse(
+    val count: Int,
+    val next: String?,
+    val previous: String?,
+    val results: List<NoteResponse>
+)
+
+data class CreateNoteRequest(
+    val title: String,
+    val description: String
+)
+
+data class UpdateNoteRequest(
+    val title: String,
+    val description: String
+)./java/com/example/simplenote/data/remote/dto/AuthDto.kt
+package com.example.simplenote.data.remote.dto
+
+import com.google.gson.annotations.SerializedName
+
+data class RegisterRequest(
+    val username: String,
+    val password: String,
+    val email: String,
+    @SerializedName("first_name")
+    val firstName: String,
+    @SerializedName("last_name")
+    val lastName: String
+)
+
+data class RegisterResponse(
+    val username: String,
+    val email: String,
+    @SerializedName("first_name")
+    val firstName: String,
+    @SerializedName("last_name")
+    val lastName: String
+)
+
+data class LoginRequest(
+    val username: String,
+    val password: String
+)
+
+data class TokenResponse(
+    val access: String,
+    val refresh: String
+)
+
+data class RefreshTokenRequest(
+    val refresh: String
+)
+
+data class AccessTokenResponse(
+    val access: String
+)
+./java/com/example/simplenote/data/local/dao/UserDao.kt
+package com.example.simplenote.data.local.dao
+
+import androidx.room.*
+import com.example.simplenote.data.local.entities.UserEntity
+
+@Dao
+interface UserDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertUser(user: UserEntity)
+
+    @Query("SELECT * FROM users WHERE id = :id")
+    suspend fun getUserById(id: Int): UserEntity?
+
+    @Query("DELETE FROM users")
+    suspend fun deleteAllUsers()
+}./java/com/example/simplenote/data/local/dao/NoteDao.kt
+package com.example.simplenote.data.local.dao
+
+import androidx.room.*
+import com.example.simplenote.data.local.entities.NoteEntity
+import kotlinx.coroutines.flow.Flow
+
+@Dao
+interface NoteDao {
+    @Query("SELECT * FROM notes ORDER BY updatedAt DESC")
+    fun getAllNotes(): Flow<List<NoteEntity>>
+
+    @Query("SELECT * FROM notes WHERE id = :id")
+    suspend fun getNoteById(id: Int): NoteEntity?
+
+    @Query("SELECT * FROM notes WHERE title LIKE :query OR description LIKE :query ORDER BY updatedAt DESC")
+    fun searchNotes(query: String): Flow<List<NoteEntity>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertNote(note: NoteEntity)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertNotes(notes: List<NoteEntity>)
+
+    @Update
+    suspend fun updateNote(note: NoteEntity)
+
+    @Delete
+    suspend fun deleteNote(note: NoteEntity)
+
+    @Query("DELETE FROM notes")
+    suspend fun deleteAllNotes()
+
+    @Query("SELECT * FROM notes WHERE isSynced = 0")
+    suspend fun getUnsyncedNotes(): List<NoteEntity>
+}./java/com/example/simplenote/data/local/entities/NoteEntity.kt
+package com.example.simplenote.data.local.entities
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import java.util.Date
+
+@Entity(tableName = "notes")
+data class NoteEntity(
+    @PrimaryKey
+    val id: Int,
+    val title: String,
+    val description: String,
+    val createdAt: Date,
+    val updatedAt: Date,
+    val creatorName: String,
+    val creatorUsername: String,
+    val isSynced: Boolean = true
+)./java/com/example/simplenote/data/local/entities/UserEntity.kt
+package com.example.simplenote.data.local.entities
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "users")
+data class UserEntity(
+    @PrimaryKey
+    val id: Int,
+    val username: String,
+    val email: String,
+    val firstName: String,
+    val lastName: String
+)./java/com/example/simplenote/data/local/PreferencesManager.kt
+package com.example.simplenote.data.local
+
+import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.*
+import androidx.datastore.preferences.preferencesDataStore
+import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+import javax.inject.Inject
+import javax.inject.Singleton
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "simplenote_prefs")
+
+@Singleton
+class PreferencesManager @Inject constructor(
+    @ApplicationContext private val context: Context
+) {
+    private val dataStore = context.dataStore
+
+    companion object {
+        val ACCESS_TOKEN_KEY = stringPreferencesKey("access_token")
+        val REFRESH_TOKEN_KEY = stringPreferencesKey("refresh_token")
+        val USER_ID_KEY = intPreferencesKey("user_id")
+        val USERNAME_KEY = stringPreferencesKey("username")
+    }
+
+    val accessToken: Flow<String?> = dataStore.data.map { preferences ->
+        preferences[ACCESS_TOKEN_KEY]
+    }
+
+    val refreshToken: Flow<String?> = dataStore.data.map { preferences ->
+        preferences[REFRESH_TOKEN_KEY]
+    }
+
+    val userId: Flow<Int?> = dataStore.data.map { preferences ->
+        preferences[USER_ID_KEY]
+    }
+
+    val username: Flow<String?> = dataStore.data.map { preferences ->
+        preferences[USERNAME_KEY]
+    }
+
+    suspend fun saveTokens(accessToken: String, refreshToken: String) {
+        dataStore.edit { preferences ->
+            preferences[ACCESS_TOKEN_KEY] = accessToken
+            preferences[REFRESH_TOKEN_KEY] = refreshToken
+        }
+    }
+
+    suspend fun saveUserInfo(userId: Int, username: String) {
+        dataStore.edit { preferences ->
+            preferences[USER_ID_KEY] = userId
+            preferences[USERNAME_KEY] = username
+        }
+    }
+
+    suspend fun clearAll() {
+        dataStore.edit { preferences ->
+            preferences.clear()
+        }
+    }
+}./java/com/example/simplenote/data/local/database/Converters.kt
+package com.example.simplenote.data.local.database
+
+import androidx.room.TypeConverter
+import java.util.Date
+
+class Converters {
+    @TypeConverter
+    fun fromTimestamp(value: Long?): Date? {
+        return value?.let { Date(it) }
+    }
+
+    @TypeConverter
+    fun dateToTimestamp(date: Date?): Long? {
+        return date?.time
+    }
+}./java/com/example/simplenote/data/local/database/SimpleNoteDatabase.kt
+package com.example.simplenote.data.local.database
+
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.simplenote.data.local.dao.NoteDao
+import com.example.simplenote.data.local.dao.UserDao
+import com.example.simplenote.data.local.entities.NoteEntity
+import com.example.simplenote.data.local.entities.UserEntity
+
+@Database(
+    entities = [NoteEntity::class, UserEntity::class],
+    version = 1,
+    exportSchema = false
+)
+@TypeConverters(Converters::class)
+abstract class SimpleNoteDatabase : RoomDatabase() {
+    abstract fun noteDao(): NoteDao
+    abstract fun userDao(): UserDao
+}./java/com/example/simplenote/data/repository/NoteRepositoryImpl.kt
+package com.example.simplenote.data.repository
+
+import com.example.simplenote.data.local.dao.NoteDao
+import com.example.simplenote.data.local.entities.NoteEntity
+import com.example.simplenote.data.remote.api.SimpleNoteApi
+import com.example.simplenote.data.remote.dto.CreateNoteRequest
+import com.example.simplenote.data.remote.dto.UpdateNoteRequest
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.domain.repository.NoteRepository
+import com.example.simplenote.utils.Resource
+import com.example.simplenote.utils.toDate
+import com.example.simplenote.utils.toNote
+import com.example.simplenote.utils.toNoteEntity
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
+import javax.inject.Inject
+
+class NoteRepositoryImpl @Inject constructor(
+    private val api: SimpleNoteApi,
+    private val noteDao: NoteDao
+) : NoteRepository {
+
+    override fun getAllNotes(): Flow<Resource<List<Note>>> = flow {
+        emit(Resource.Loading())
+
+        // First emit cached data
+        noteDao.getAllNotes().collect { entities ->
+            emit(Resource.Success(entities.map { it.toNote() }))
+        }
+    }
+
+    override suspend fun refreshNotes(): Resource<Unit> {
+        return try {
+            val response = api.getNotes()
+            val entities = response.results.map { it.toNoteEntity() }
+            noteDao.insertNotes(entities)
+            Resource.Success(Unit)
+        } catch (e: Exception) {
+            Resource.Error(e.message ?: "Failed to refresh notes")
+        }
+    }
+
+    override suspend fun getNote(id: Int): Resource<Note> {
+        return try {
+            // Try to get from network first
+            val response = api.getNote(id)
+            val entity = response.toNoteEntity()
+            noteDao.insertNote(entity)
+            Resource.Success(entity.toNote())
+        } catch (e: Exception) {
+            // Fallback to local database
+            val entity = noteDao.getNoteById(id)
+            if (entity != null) {
+                Resource.Success(entity.toNote())
+            } else {
+                Resource.Error(e.message ?: "Note not found")
+            }
+        }
+    }
+
+    override suspend fun createNote(title: String, description: String): Resource<Note> {
+        return try {
+            val response = api.createNote(CreateNoteRequest(title, description))
+            val entity = response.toNoteEntity()
+            noteDao.insertNote(entity)
+            Resource.Success(entity.toNote())
+        } catch (e: Exception) {
+            // For offline support, could create a local note with isSynced = false
+            Resource.Error(e.message ?: "Failed to create note")
+        }
+    }
+
+    override suspend fun updateNote(id: Int, title: String, description: String): Resource<Note> {
+        return try {
+            val response = api.updateNote(id, UpdateNoteRequest(title, description))
+            val entity = response.toNoteEntity()
+            noteDao.updateNote(entity)
+            Resource.Success(entity.toNote())
+        } catch (e: Exception) {
+            Resource.Error(e.message ?: "Failed to update note")
+        }
+    }
+
+    override suspend fun deleteNote(id: Int): Resource<Unit> {
+        return try {
+            api.deleteNote(id)
+            noteDao.getNoteById(id)?.let { noteDao.deleteNote(it) }
+            Resource.Success(Unit)
+        } catch (e: Exception) {
+            Resource.Error(e.message ?: "Failed to delete note")
+        }
+    }
+
+    override fun searchNotes(query: String): Flow<Resource<List<Note>>> {
+        return noteDao.searchNotes("%$query%").map { entities ->
+            Resource.Success(entities.map { it.toNote() })
+        }
+    }
+}./java/com/example/simplenote/data/repository/AuthRepository.kt
+package com.example.simplenote.domain.repository
+
+import com.example.simplenote.domain.model.User
+import com.example.simplenote.utils.Resource
+import kotlinx.coroutines.flow.Flow
+
+interface AuthRepository {
+    suspend fun register(
+        username: String,
+        password: String,
+        email: String,
+        firstName: String,
+        lastName: String
+    ): Resource<Unit>
+
+    suspend fun login(username: String, password: String): Resource<Unit>
+
+    suspend fun refreshToken(): Resource<Unit>
+
+    suspend fun getUserInfo(): Resource<User>
+
+    suspend fun logout()
+
+    fun isLoggedIn(): Flow<Boolean>
+}./java/com/example/simplenote/data/repository/AuthRepositoryImpl.kt
+package com.example.simplenote.data.repository
+
+import com.example.simplenote.data.local.PreferencesManager
+import com.example.simplenote.data.local.dao.UserDao
+import com.example.simplenote.data.local.entities.UserEntity
+import com.example.simplenote.data.remote.api.SimpleNoteApi
+import com.example.simplenote.data.remote.dto.*
+import com.example.simplenote.domain.model.User
+import com.example.simplenote.domain.repository.AuthRepository
+import com.example.simplenote.utils.Resource
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
+import javax.inject.Inject
+
+class AuthRepositoryImpl @Inject constructor(
+    private val api: SimpleNoteApi,
+    private val userDao: UserDao,
+    private val preferencesManager: PreferencesManager
+) : AuthRepository {
+
+    override suspend fun register(
+        username: String,
+        password: String,
+        email: String,
+        firstName: String,
+        lastName: String
+    ): Resource<Unit> {
+        return try {
+            val response = api.register(
+                RegisterRequest(username, password, email, firstName, lastName)
+            )
+            Resource.Success(Unit)
+        } catch (e: Exception) {
+            Resource.Error(e.message ?: "Registration failed")
+        }
+    }
+
+    override suspend fun login(username: String, password: String): Resource<Unit> {
+        return try {
+            val response = api.login(LoginRequest(username, password))
+            preferencesManager.saveTokens(response.access, response.refresh)
+
+            // Get user info after login. This call will now be protected by AuthInterceptor
+            // and potentially TokenAuthenticator for token refresh.
+            val userInfo = api.getUserInfo()
+            preferencesManager.saveUserInfo(userInfo.id, userInfo.username)
+
+            // Save user to local database
+            userDao.insertUser(
+                UserEntity(
+                    id = userInfo.id,
+                    username = userInfo.username,
+                    email = userInfo.email,
+                    firstName = userInfo.firstName,
+                    lastName = userInfo.lastName
+                )
+            )
+
+            Resource.Success(Unit)
+        } catch (e: Exception) {
+            // If login fails at any point (e.g., invalid credentials, network error,
+            // or getUserInfo fails), clear any partially saved tokens to ensure a clean state.
+            preferencesManager.clearAll()
+            Resource.Error(e.message ?: "Login failed")
+        }
+    }
+
+    override suspend fun refreshToken(): Resource<Unit> {
+        // This method is primarily intended to be called by the TokenAuthenticator.
+        // It's exposed in the repository for completeness but direct manual calls should be rare.
+        return try {
+            val refreshToken = preferencesManager.refreshToken.first()
+                ?: return Resource.Error("No refresh token available for refresh attempt.")
+
+            val response = api.refreshToken(RefreshTokenRequest(refreshToken))
+            // Keep the old refresh token, only update the access token
+            val currentRefreshToken = preferencesManager.refreshToken.first() ?: ""
+            preferencesManager.saveTokens(response.access, currentRefreshToken)
+
+            Resource.Success(Unit)
+        } catch (e: Exception) {
+            // If refresh fails (e.g., refresh token itself is invalid/expired),
+            // clear all tokens to force a full re-login.
+            preferencesManager.clearAll()
+            Resource.Error(e.message ?: "Token refresh failed. Please log in again.")
+        }
+    }
+
+    override suspend fun getUserInfo(): Resource<User> {
+        return try {
+            val response = api.getUserInfo()
+            // Update local user info in case it changed on the server or was fetched for the first time
+            userDao.insertUser(
+                UserEntity(
+                    id = response.id,
+                    username = response.username,
+                    email = response.email,
+                    firstName = response.firstName,
+                    lastName = response.lastName
+                )
+            )
+            Resource.Success(
+                User(
+                    id = response.id,
+                    username = response.username,
+                    email = response.email,
+                    firstName = response.firstName,
+                    lastName = response.lastName
+                )
+            )
+        } catch (e: Exception) {
+            // If network fetch fails, try to retrieve user info from the local database as a fallback.
+            val userId = preferencesManager.userId.first()
+            val userEntity = if (userId != null) userDao.getUserById(userId) else null
+
+            if (userEntity != null) {
+                Resource.Success(
+                    User(
+                        id = userEntity.id,
+                        username = userEntity.username,
+                        email = userEntity.email,
+                        firstName = userEntity.firstName,
+                        lastName = userEntity.lastName
+                    )
+                )
+            } else {
+                // If network failed and no local data, then it's a true error.
+                // This might indicate the user is genuinely not logged in or their session is invalid.
+                Resource.Error(e.message ?: "Failed to get user info. No cached data available.")
+            }
+        }
+    }
+
+    override suspend fun logout() {
+        // Clear all authentication tokens and user data from local storage
+        preferencesManager.clearAll()
+        userDao.deleteAllUsers()
+    }
+
+    override fun isLoggedIn(): Flow<Boolean> {
+        // A user is considered logged in if an access token is present in preferences.
+        // The TokenAuthenticator will handle the validity and refreshing of this token.
+        return preferencesManager.accessToken.map { it != null }
+    }
+}
+./java/com/example/simplenote/data/repository/NoteRepository.kt
+package com.example.simplenote.domain.repository
+
+import com.example.simplenote.domain.model.Note
+import com.example.simplenote.utils.Resource
+import kotlinx.coroutines.flow.Flow
+
+interface NoteRepository {
+    fun getAllNotes(): Flow<Resource<List<Note>>>
+
+    suspend fun refreshNotes(): Resource<Unit>
+
+    suspend fun getNote(id: Int): Resource<Note>
+
+    suspend fun createNote(title: String, description: String): Resource<Note>
+
+    suspend fun updateNote(id: Int, title: String, description: String): Resource<Note>
+
+    suspend fun deleteNote(id: Int): Resource<Unit>
+
+    fun searchNotes(query: String): Flow<Resource<List<Note>>>
+}./java/com/example/simplenote/SimpleNoteApplication.kt
+package com.example.simplenote
+
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class SimpleNoteApplication : Application()./AndroidManifest.xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".SimpleNoteApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SimpleNote"
+        android:usesCleartextTraffic="true" tools:targetApi="31"> <!-- Added android:usesCleartextTraffic="true" -->
+
+        <activity
+            android:name=".presentation.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SimpleNote">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".presentation.auth.AuthActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".presentation.main.MainActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

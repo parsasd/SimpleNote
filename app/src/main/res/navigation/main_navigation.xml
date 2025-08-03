@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.simplenote.presentation.home.HomeFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/action_homeFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.simplenote.presentation.profile.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.simplenote.presentation.note.detail.NoteDetailFragment"
+        android:label="Note Detail">
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_noteDetailFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditNoteFragment"
+        android:name="com.example.simplenote.presentation.note.addedit.AddEditNoteFragment"
+        android:label="Add/Edit Note">
+        <argument
+            android:name="noteId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+</navigation>
+
