@@ -2,6 +2,7 @@ package com.example.simplenote.data.remote.api
 
 import com.example.simplenote.data.remote.dto.*
 import retrofit2.http.*
+import retrofit2.Response
 
 interface SimpleNoteApi {
 
@@ -42,6 +43,9 @@ interface SimpleNoteApi {
         @Path("id") id: Int,
         @Body request: Map<String, String>
     ): NoteResponse
+
+    @POST("api/auth/change-password/")
+    suspend fun changePassword(@Body request: PasswordChangeRequest): Response<Unit>
 
     @DELETE("api/notes/{id}/")
     suspend fun deleteNote(@Path("id") id: Int)

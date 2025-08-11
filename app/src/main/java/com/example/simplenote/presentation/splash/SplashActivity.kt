@@ -11,6 +11,7 @@ import com.example.simplenote.presentation.base.BaseActivity
 import com.example.simplenote.presentation.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 @SuppressLint("CustomSplashScreen")
@@ -21,21 +22,30 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
     override fun getViewBinding() = ActivitySplashBinding.inflate(layoutInflater)
 
-    override fun setupViews() {
-        // Splash screen setup
-    }
+    override fun setupViews() {}
 
     override fun observeData() {
-        lifecycleScope.launch {
-            delay(2000) // Show splash for 2 seconds
-            viewModel.isLoggedIn.collect { isLoggedIn ->
-                if (isLoggedIn) {
-                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-                } else {
-                    startActivity(Intent(this@SplashActivity, AuthActivity::class.java))
+        lifecycleScope.launchWhenStarted {
+            delay(1500)
+
+            viewModel.authState.first { it !is SplashViewModel.AuthState.Loading }
+
+            when (viewModel.authState.value) {
+                is SplashViewModel.AuthState.Authenticated -> {
+                    navigateTo(MainActivity::class.java)
                 }
-                finish()
+                else -> {
+                    navigateTo(AuthActivity::class.java)
+                }
             }
         }
+    }
+
+    private fun <T> navigateTo(activityClass: Class<T>) {
+        val intent = Intent(this, activityClass).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        startActivity(intent)
+        finish()
     }
 }

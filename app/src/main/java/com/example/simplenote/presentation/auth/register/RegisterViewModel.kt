@@ -15,8 +15,15 @@ class RegisterViewModel @Inject constructor(
     private val authRepository: AuthRepository
 ) : ViewModel() {
 
-    private val _registerState = MutableStateFlow<Resource<Unit>>(Resource.Success(Unit))
-    val registerState: StateFlow<Resource<Unit>> = _registerState
+    sealed class RegisterState {
+        object Idle : RegisterState()
+        object Loading : RegisterState()
+        object Success : RegisterState()
+        data class Error(val message: String) : RegisterState()
+    }
+
+    private val _registerState = MutableStateFlow<RegisterState>(RegisterState.Idle)
+    val registerState: StateFlow<RegisterState> = _registerState
 
     fun register(
         username: String,
@@ -26,8 +33,12 @@ class RegisterViewModel @Inject constructor(
         lastName: String
     ) {
         viewModelScope.launch {
-            _registerState.value = Resource.Loading()
-            _registerState.value = authRepository.register(username, password, email, firstName, lastName)
+            _registerState.value = RegisterState.Loading
+            when (val result = authRepository.register(username, password, email, firstName, lastName)) {
+                is Resource.Success -> _registerState.value = RegisterState.Success
+                is Resource.Error -> _registerState.value = RegisterState.Error(result.message ?: "An unknown error occurred")
+                else -> _registerState.value = RegisterState.Error("An unexpected error occurred")
+            }
         }
     }
 }

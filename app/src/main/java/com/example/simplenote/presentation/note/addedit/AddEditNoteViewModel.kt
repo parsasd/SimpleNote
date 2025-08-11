@@ -1,4 +1,3 @@
-// File: presentation/note/addedit/AddEditNoteViewModel.kt
 package com.example.simplenote.presentation.note.addedit
 
 import androidx.lifecycle.ViewModel
@@ -10,8 +9,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import java.util.Date // Added import
-
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,34 +16,52 @@ class AddEditNoteViewModel @Inject constructor(
     private val noteRepository: NoteRepository
 ) : ViewModel() {
 
-    private val _noteState = MutableStateFlow<Resource<Note>>(Resource.Success(
-        Note(0, "", "", Date(), Date(), "", "")
-    ))
-    val noteState: StateFlow<Resource<Note>> = _noteState
+    sealed class NoteLoadState {
+        object Idle : NoteLoadState()
+        object Loading : NoteLoadState()
+        data class Success(val note: Note) : NoteLoadState()
+        data class Error(val message: String) : NoteLoadState()
+    }
 
-    private val _saveState = MutableStateFlow<Resource<Note>>(Resource.Success(
-        Note(0, "", "", Date(), Date(), "", "")
-    ))
-    val saveState: StateFlow<Resource<Note>> = _saveState
+    sealed class NoteSaveState {
+        object Idle : NoteSaveState()
+        object Loading : NoteSaveState()
+        object Success : NoteSaveState()
+        data class Error(val message: String) : NoteSaveState()
+    }
+
+    private val _noteLoadState = MutableStateFlow<NoteLoadState>(NoteLoadState.Idle)
+    val noteLoadState: StateFlow<NoteLoadState> = _noteLoadState
+
+    private val _noteSaveState = MutableStateFlow<NoteSaveState>(NoteSaveState.Idle)
+    val noteSaveState: StateFlow<NoteSaveState> = _noteSaveState
 
     fun loadNote(id: Int) {
+        if (id == 0) return
         viewModelScope.launch {
-            _noteState.value = Resource.Loading()
-            _noteState.value = noteRepository.getNote(id)
+            _noteLoadState.value = NoteLoadState.Loading
+            when (val result = noteRepository.getNote(id)) {
+                is Resource.Success -> _noteLoadState.value = NoteLoadState.Success(result.data!!)
+                is Resource.Error -> _noteLoadState.value = NoteLoadState.Error(result.message ?: "Failed to load note")
+                else -> { /* No-op */ }
+            }
         }
     }
 
-    fun createNote(title: String, description: String) {
+    fun saveNote(id: Int?, title: String, description: String) {
         viewModelScope.launch {
-            _saveState.value = Resource.Loading()
-            _saveState.value = noteRepository.createNote(title, description)
-        }
-    }
+            _noteSaveState.value = NoteSaveState.Loading
+            val result = if (id == null) {
+                noteRepository.createNote(title, description)
+            } else {
+                noteRepository.updateNote(id, title, description)
+            }
 
-    fun updateNote(id: Int, title: String, description: String) {
-        viewModelScope.launch {
-            _saveState.value = Resource.Loading()
-            _saveState.value = noteRepository.updateNote(id, title, description)
+            when (result) {
+                is Resource.Success -> _noteSaveState.value = NoteSaveState.Success
+                is Resource.Error -> _noteSaveState.value = NoteSaveState.Error(result.message ?: "Failed to save note")
+                else -> { /* No-op */ }
+            }
         }
     }
 }

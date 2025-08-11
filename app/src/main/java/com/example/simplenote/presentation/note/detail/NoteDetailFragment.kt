@@ -1,16 +1,15 @@
-// File: presentation/note/detail/NoteDetailFragment.kt
 package com.example.simplenote.presentation.note.detail
 
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.simplenote.R
-import com.example.simplenote.databinding.FragmentNoteDetailBinding // Added import
+import com.example.simplenote.databinding.FragmentNoteDetailBinding
 import com.example.simplenote.presentation.base.BaseFragment
-import com.example.simplenote.utils.Resource
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -33,20 +32,13 @@ class NoteDetailFragment : BaseFragment<FragmentNoteDetailBinding>() {
         FragmentNoteDetailBinding.inflate(inflater, container, false)
 
     override fun setupViews() {
-        binding.toolbar.setNavigationOnClickListener {
-            findNavController().navigateUp()
-        }
+        binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
 
         binding.toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.action_edit -> {
-                    val bundle = Bundle().apply {
-                        putInt("noteId", noteId)
-                    }
-                    findNavController().navigate(
-                        R.id.action_noteDetailFragment_to_addEditNoteFragment,
-                        bundle
-                    )
+                    val bundle = Bundle().apply { putInt("noteId", noteId) }
+                    findNavController().navigate(R.id.action_noteDetailFragment_to_addEditNoteFragment, bundle)
                     true
                 }
                 R.id.action_delete -> {
@@ -59,48 +51,35 @@ class NoteDetailFragment : BaseFragment<FragmentNoteDetailBinding>() {
     }
 
     override fun observeData() {
-        viewModel.loadNote(noteId)
+        if (noteId != 0) {
+            viewModel.loadNote(noteId)
+        }
 
         lifecycleScope.launch {
-            viewModel.noteState.collect { resource ->
-                when (resource) {
-                    is Resource.Loading -> {
-                        binding.progressBar.visibility = View.VISIBLE
-                        binding.contentLayout.visibility = View.GONE
-                    }
-                    is Resource.Success -> {
-                        binding.progressBar.visibility = View.GONE
-                        binding.contentLayout.visibility = View.VISIBLE
+            viewModel.noteState.collect { state ->
+                binding.progressBar.isVisible = state is NoteDetailViewModel.NoteDetailState.Loading
+                binding.contentLayout.isVisible = state is NoteDetailViewModel.NoteDetailState.Success
 
-                        resource.data?.let { note ->
-                            binding.tvTitle.text = note.title
-                            binding.tvDescription.text = note.description
-                            binding.tvLastEdited.text = "Last edited on ${
-                                SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault())
-                                    .format(note.updatedAt)
-                            }"
-                        }
-                    }
-                    is Resource.Error -> {
-                        binding.progressBar.visibility = View.GONE
-                        Toast.makeText(context, resource.message, Toast.LENGTH_SHORT).show()
-                        findNavController().navigateUp()
-                    }
+                if (state is NoteDetailViewModel.NoteDetailState.Success) {
+                    val note = state.note
+                    binding.tvTitle.text = note.title
+                    binding.tvDescription.text = note.description
+                    binding.tvLastEdited.text = "Last edited on ${
+                        SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault()).format(note.updatedAt)
+                    }"
+                } else if (state is NoteDetailViewModel.NoteDetailState.Error) {
+                    Toast.makeText(context, state.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
 
         lifecycleScope.launch {
-            viewModel.deleteState.collect { resource ->
-                when (resource) {
-                    is Resource.Success -> {
-                        Toast.makeText(context, "Note deleted successfully", Toast.LENGTH_SHORT).show()
-                        findNavController().navigateUp()
-                    }
-                    is Resource.Error -> {
-                        Toast.makeText(context, resource.message, Toast.LENGTH_SHORT).show()
-                    }
-                    else -> {}
+            viewModel.deleteState.collect { state ->
+                if (state is NoteDetailViewModel.DeleteState.Success) {
+                    Toast.makeText(context, "Note deleted successfully", Toast.LENGTH_SHORT).show()
+                    findNavController().navigateUp()
+                } else if (state is NoteDetailViewModel.DeleteState.Error) {
+                    Toast.makeText(context, state.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }

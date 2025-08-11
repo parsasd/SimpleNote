@@ -26,6 +26,13 @@ data class LoginRequest(
     val password: String
 )
 
+data class PasswordChangeRequest(
+    @SerializedName("old_password")
+    val oldPassword: String,
+    @SerializedName("new_password")
+    val newPassword: String
+)
+
 data class TokenResponse(
     val access: String,
     val refresh: String

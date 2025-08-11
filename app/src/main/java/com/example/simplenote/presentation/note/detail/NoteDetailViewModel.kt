@@ -15,24 +15,46 @@ import javax.inject.Inject
 class NoteDetailViewModel @Inject constructor(
     private val noteRepository: NoteRepository
 ) : ViewModel() {
-    
-    private val _noteState = MutableStateFlow<Resource<Note>>(Resource.Loading())
-    val noteState: StateFlow<Resource<Note>> = _noteState
-    
-    private val _deleteState = MutableStateFlow<Resource<Unit>>(Resource.Success(Unit))
-    val deleteState: StateFlow<Resource<Unit>> = _deleteState
-    
+
+    sealed class NoteDetailState {
+        object Idle : NoteDetailState()
+        object Loading : NoteDetailState()
+        data class Success(val note: Note) : NoteDetailState()
+        data class Error(val message: String) : NoteDetailState()
+    }
+
+    sealed class DeleteState {
+        object Idle : DeleteState()
+        object Loading : DeleteState()
+        object Success : DeleteState()
+        data class Error(val message: String) : DeleteState()
+    }
+
+    private val _noteState = MutableStateFlow<NoteDetailState>(NoteDetailState.Idle)
+    val noteState: StateFlow<NoteDetailState> = _noteState
+
+    private val _deleteState = MutableStateFlow<DeleteState>(DeleteState.Idle)
+    val deleteState: StateFlow<DeleteState> = _deleteState
+
     fun loadNote(id: Int) {
         viewModelScope.launch {
-            _noteState.value = Resource.Loading()
-            _noteState.value = noteRepository.getNote(id)
+            _noteState.value = NoteDetailState.Loading
+            when (val result = noteRepository.getNote(id)) {
+                is Resource.Success -> _noteState.value = NoteDetailState.Success(result.data!!)
+                is Resource.Error -> _noteState.value = NoteDetailState.Error(result.message ?: "Failed to load note")
+                else -> { /* No-op */ }
+            }
         }
     }
-    
+
     fun deleteNote(id: Int) {
         viewModelScope.launch {
-            _deleteState.value = Resource.Loading()
-            _deleteState.value = noteRepository.deleteNote(id)
+            _deleteState.value = DeleteState.Loading
+            when (noteRepository.deleteNote(id)) {
+                is Resource.Success -> _deleteState.value = DeleteState.Success
+                is Resource.Error -> _deleteState.value = DeleteState.Error("Failed to delete note")
+                else -> { /* No-op */ }
+            }
         }
     }
 }

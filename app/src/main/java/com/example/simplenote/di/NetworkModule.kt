@@ -13,12 +13,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
-
-// Custom qualifier for Retrofit instances that do NOT use the AuthInterceptor/TokenAuthenticator
-// This is used for the refresh token API call within the TokenAuthenticator itself to prevent circular dependencies.
-// The annotation class UnauthorizedApi is defined in its own file (UnauthorizedApi.kt)
-// and should not be redeclared here.
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -32,6 +28,16 @@ object NetworkModule {
 
     @Provides
     @Singleton
+    fun provideTokenAuthenticator(
+        preferencesManager: PreferencesManager,
+        @Named("unauthorizedApi") api: SimpleNoteApi
+    ): TokenAuthenticator {
+        return TokenAuthenticator(preferencesManager, api)
+    }
+
+    @Provides
+    @Singleton
+    @Named("authorizedOkHttpClient")
     fun provideOkHttpClient(
         authInterceptor: AuthInterceptor,
         tokenAuthenticator: TokenAuthenticator
@@ -39,34 +45,29 @@ object NetworkModule {
         return OkHttpClient.Builder()
             .addInterceptor(authInterceptor)
             .authenticator(tokenAuthenticator)
-            .addInterceptor(HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            })
+            .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
             .build()
     }
 
     @Provides
     @Singleton
-    @UnauthorizedApi
+    @Named("unauthorizedOkHttpClient")
     fun provideUnauthorizedOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            })
+            .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
             .build()
     }
 
     @Provides
     @Singleton
-    fun provideSimpleNoteApi(okHttpClient: OkHttpClient): SimpleNoteApi {
+    @Named("authorizedApi")
+    fun provideSimpleNoteApi(@Named("authorizedOkHttpClient") okHttpClient: OkHttpClient): SimpleNoteApi {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.0.245:8000/")
+            .baseUrl("http:/172.20.10.4:8000/") // <-- IMPORTANT: Make sure this is your computer's IP address
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -75,10 +76,10 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    @UnauthorizedApi
-    fun provideUnauthorizedSimpleNoteApi(@UnauthorizedApi okHttpClient: OkHttpClient): SimpleNoteApi {
+    @Named("unauthorizedApi")
+    fun provideUnauthorizedSimpleNoteApi(@Named("unauthorizedOkHttpClient") okHttpClient: OkHttpClient): SimpleNoteApi {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.0.245:8000/")
+            .baseUrl("http://172.20.10.4:8000/") // <-- IMPORTANT: Make sure this is your computer's IP address
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

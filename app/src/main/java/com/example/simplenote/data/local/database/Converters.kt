@@ -5,8 +5,8 @@ import java.util.Date
 
 class Converters {
     @TypeConverter
-    fun fromTimestamp(value: Long?): Date? {
-        return value?.let { Date(it) }
+    fun fromTimestamp(value: Long?): Date {
+        return value?.let { Date(it) } ?: Date()
     }
 
     @TypeConverter

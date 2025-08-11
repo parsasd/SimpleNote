@@ -1,4 +1,3 @@
-// File: presentation/auth/register/RegisterFragment.kt
 package com.example.simplenote.presentation.auth.register
 
 import android.view.LayoutInflater
@@ -8,9 +7,8 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.simplenote.databinding.FragmentRegisterBinding // Added import
+import com.example.simplenote.databinding.FragmentRegisterBinding
 import com.example.simplenote.presentation.base.BaseFragment
-import com.example.simplenote.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -23,32 +21,29 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
         FragmentRegisterBinding.inflate(inflater, container, false)
 
     override fun setupViews() {
-        with(binding) {
-            tvBackToLogin.setOnClickListener {
-                findNavController().navigateUp()
-            }
+        binding.tvBackToLogin.setOnClickListener {
+            findNavController().navigateUp()
+        }
+        binding.tvLogin.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
-            etFirstName.doAfterTextChanged { tilFirstName.error = null }
-            etLastName.doAfterTextChanged { tilLastName.error = null }
-            etUsername.doAfterTextChanged { tilUsername.error = null }
-            etEmail.doAfterTextChanged { tilEmail.error = null }
-            etPassword.doAfterTextChanged { tilPassword.error = null }
-            etRetypePassword.doAfterTextChanged { tilRetypePassword.error = null }
+        binding.etFirstName.doAfterTextChanged { binding.tilFirstName.error = null }
+        binding.etLastName.doAfterTextChanged { binding.tilLastName.error = null }
+        binding.etUsername.doAfterTextChanged { binding.tilUsername.error = null }
+        binding.etEmail.doAfterTextChanged { binding.tilEmail.error = null }
+        binding.etPassword.doAfterTextChanged { binding.tilPassword.error = null }
+        binding.etRetypePassword.doAfterTextChanged { binding.tilRetypePassword.error = null }
 
-            btnRegister.setOnClickListener {
-                if (validateInput()) {
-                    viewModel.register(
-                        username = etUsername.text.toString(),
-                        password = etPassword.text.toString(),
-                        email = etEmail.text.toString(),
-                        firstName = etFirstName.text.toString(),
-                        lastName = etLastName.text.toString()
-                    )
-                }
-            }
-
-            tvLogin.setOnClickListener {
-                findNavController().navigateUp()
+        binding.btnRegister.setOnClickListener {
+            if (validateInput()) {
+                viewModel.register(
+                    username = binding.etUsername.text.toString().trim(),
+                    password = binding.etPassword.text.toString(),
+                    email = binding.etEmail.text.toString().trim(),
+                    firstName = binding.etFirstName.text.toString().trim(),
+                    lastName = binding.etLastName.text.toString().trim()
+                )
             }
         }
     }
@@ -56,50 +51,44 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
     override fun observeData() {
         lifecycleScope.launch {
             viewModel.registerState.collect { state ->
+                binding.btnRegister.isEnabled = state !is RegisterViewModel.RegisterState.Loading
+
                 when (state) {
-                    is Resource.Loading -> {
-                        binding.btnRegister.isEnabled = false
-                    }
-                    is Resource.Success -> {
-                        Toast.makeText(context, "Registration successful! Please login.", Toast.LENGTH_SHORT).show()
+                    is RegisterViewModel.RegisterState.Success -> {
+                        Toast.makeText(context, "Registration successful! Please login.", Toast.LENGTH_LONG).show()
                         findNavController().navigateUp()
                     }
-                    is Resource.Error -> {
-                        binding.btnRegister.isEnabled = true
+                    is RegisterViewModel.RegisterState.Error -> {
                         Toast.makeText(context, state.message, Toast.LENGTH_SHORT).show()
                     }
+                    else -> Unit
                 }
             }
         }
     }
 
     private fun validateInput(): Boolean {
+        var isValid = true
         with(binding) {
-            var isValid = true
-
-            if (etFirstName.text.isNullOrEmpty()) {
+            if (etFirstName.text.isNullOrBlank()) {
                 tilFirstName.error = "First name is required"
                 isValid = false
             }
-
-            if (etLastName.text.isNullOrEmpty()) {
+            if (etLastName.text.isNullOrBlank()) {
                 tilLastName.error = "Last name is required"
                 isValid = false
             }
-
-            if (etUsername.text.isNullOrEmpty()) {
+            if (etUsername.text.isNullOrBlank()) {
                 tilUsername.error = "Username is required"
                 isValid = false
             }
-
-            if (etEmail.text.isNullOrEmpty()) {
+            if (etEmail.text.isNullOrBlank()) {
                 tilEmail.error = "Email is required"
                 isValid = false
             } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(etEmail.text.toString()).matches()) {
                 tilEmail.error = "Invalid email format"
                 isValid = false
             }
-
             if (etPassword.text.isNullOrEmpty()) {
                 tilPassword.error = "Password is required"
                 isValid = false
@@ -107,13 +96,11 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
                 tilPassword.error = "Password must be at least 8 characters"
                 isValid = false
             }
-
             if (etRetypePassword.text.toString() != etPassword.text.toString()) {
                 tilRetypePassword.error = "Passwords do not match"
                 isValid = false
             }
-
-            return isValid
         }
+        return isValid
     }
 }
