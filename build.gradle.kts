@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         // Updated Hilt Android Gradle plugin version to match app-level dependencies
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.51.1")
+
     }
     repositories {
         google()

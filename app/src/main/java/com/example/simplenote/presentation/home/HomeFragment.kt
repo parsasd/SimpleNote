@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -19,12 +20,9 @@ import com.example.simplenote.presentation.auth.AuthActivity
 import com.example.simplenote.presentation.base.BaseFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
-import com.example.simplenote.utils.Resource
-
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.launch
+import androidx.paging.LoadState  // <-- new import
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -50,7 +48,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
 
         binding.etSearch.doAfterTextChanged { text ->
-            viewModel.searchNotes(text.toString())
+            viewModel.searchNotes(text?.toString().orEmpty())
         }
 
         binding.swipeRefresh.setOnRefreshListener {
@@ -108,48 +106,42 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     override fun observeData() {
-        // Use launchWhenStarted to ensure collectors are canceled when the view is destroyed.
+        // Collect paginated notes and submit to adapter.
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.notes.collect { resource ->
-                when (resource) {
-                    is Resource.Loading -> {
-                        binding.progressBar.visibility = View.VISIBLE
-                        binding.tvEmptyState.visibility = View.GONE
-                        binding.rvNotes.visibility = View.GONE
-                    }
-                    is Resource.Success -> {
-                        binding.progressBar.visibility = View.GONE
-                        binding.swipeRefresh.isRefreshing = false
-                        resource.data?.let { notes ->
-                            if (notes.isEmpty()) {
-                                binding.tvEmptyState.visibility = View.VISIBLE
-                                binding.rvNotes.visibility = View.GONE
-                            } else {
-                                binding.tvEmptyState.visibility = View.GONE
-                                binding.rvNotes.visibility = View.VISIBLE
-                                notesAdapter.submitList(notes)
-                            }
-                        }
-                    }
-                    is Resource.Error -> {
-                        binding.progressBar.visibility = View.GONE
-                        binding.swipeRefresh.isRefreshing = false
-                        Toast.makeText(context, resource.message, Toast.LENGTH_SHORT).show()
-                        resource.data?.let { notes ->
-                            if (notes.isEmpty()) {
-                                binding.tvEmptyState.visibility = View.VISIBLE
-                                binding.rvNotes.visibility = View.GONE
-                            } else {
-                                binding.tvEmptyState.visibility = View.GONE
-                                binding.rvNotes.visibility = View.VISIBLE
-                                notesAdapter.submitList(notes)
-                            }
-                        }
-                    }
+            viewModel.notes.collectLatest { pagingData ->
+                notesAdapter.submitData(lifecycle, pagingData)
+            }
+        }
+
+        // Observe refreshing state and show/hide progress.
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.isRefreshing.collectLatest { refreshing ->
+                binding.swipeRefresh.isRefreshing = refreshing
+                binding.progressBar.isVisible = refreshing
+            }
+        }
+
+        // Observe errors.
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.error.collectLatest { message ->
+                if (!message.isNullOrBlank()) {
+                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
 
+        // Show empty state when list is empty.
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            notesAdapter.loadStateFlow.collectLatest { loadState ->
+                if (loadState.refresh is LoadState.NotLoading) {
+                    val isEmpty = notesAdapter.itemCount == 0
+                    binding.tvEmptyState.isVisible = isEmpty
+                    binding.rvNotes.isVisible = !isEmpty
+                }
+            }
+        }
+
+        // Navigate to Auth if required.
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.navigateToAuth.collect {
                 startActivity(Intent(requireContext(), AuthActivity::class.java))

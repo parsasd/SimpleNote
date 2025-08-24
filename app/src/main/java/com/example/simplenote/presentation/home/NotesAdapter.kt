@@ -4,17 +4,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simplenote.databinding.ItemNoteBinding
 import com.example.simplenote.domain.model.Note
 import java.text.SimpleDateFormat
 import java.util.Locale
+import androidx.paging.PagingDataAdapter  // <-- new import
 
 class NotesAdapter(
     private val onItemClick: (Note) -> Unit,
     private val onItemLongClick: (Note, View) -> Unit = { _, _ -> }
-) : ListAdapter<Note, NotesAdapter.NoteViewHolder>(NoteDiffCallback()) {
+) : PagingDataAdapter<Note, NotesAdapter.NoteViewHolder>(NoteComparator()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val binding = ItemNoteBinding.inflate(
@@ -26,7 +26,10 @@ class NotesAdapter(
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val note = getItem(position)
+        if (note != null) {
+            holder.bind(note)
+        }
     }
 
     inner class NoteViewHolder(private val binding: ItemNoteBinding) :
@@ -50,7 +53,8 @@ class NotesAdapter(
         }
     }
 
-    class NoteDiffCallback : DiffUtil.ItemCallback<Note>() {
+    /** DiffUtil for paging adapter. */
+    class NoteComparator : DiffUtil.ItemCallback<Note>() {
         override fun areItemsTheSame(oldItem: Note, newItem: Note): Boolean {
             return oldItem.id == newItem.id
         }

@@ -13,6 +13,10 @@ import com.example.simplenote.utils.toNoteEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import androidx.paging.Pager          // <-- new imports
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.map
 import java.util.Date
 import kotlin.random.Random
 import javax.inject.Inject
@@ -29,14 +33,18 @@ class NoteRepositoryImpl @Inject constructor(
         }
     }
 
-    /** Synchronize locally modified notes and then fetch fresh notes from the API. */
+    /** Synchronize all pages of notes from the API. */
     override suspend fun refreshNotes(): Resource<Unit> {
         return try {
             syncUnsyncedNotes()
-            val response = api.getNotes()
-            val entities = response.results.map { it.toNoteEntity() }
-            // Incoming data is always synced and not deleted
-            noteDao.insertNotes(entities)
+            val allEntities = mutableListOf<NoteEntity>()
+            var page = 1
+            do {
+                val response = api.getNotes(page = page)
+                allEntities += response.results.map { it.toNoteEntity() }
+                page++
+            } while (response.next != null) // continue until there is no next page
+            noteDao.insertNotes(allEntities)
             Resource.Success(Unit)
         } catch (e: Exception) {
             Resource.Error(e.message ?: "Failed to refresh notes")
@@ -66,7 +74,7 @@ class NoteRepositoryImpl @Inject constructor(
             noteDao.insertNote(entity)
             Resource.Success(entity.toNote())
         } catch (_: Exception) {
-            // Network failed – create a local note with a negative ID
+            // Offline – create a local note with a negative ID
             val now = Date()
             val localEntity = NoteEntity(
                 id = generateLocalId(),
@@ -136,9 +144,23 @@ class NoteRepositoryImpl @Inject constructor(
         }
     }
 
+    /** Paging flow for notes; uses Room as the single source of truth. */
+    override fun getPagedNotes(query: String?): Flow<PagingData<Note>> {
+        val pagingSourceFactory = if (query.isNullOrBlank()) {
+            { noteDao.pagingSource() }
+        } else {
+            { noteDao.searchPagingSource("%$query%") }
+        }
+        return Pager(
+            config = PagingConfig(pageSize = 20, enablePlaceholders = false),
+            pagingSourceFactory = pagingSourceFactory
+        ).flow.map { pagingData ->
+            pagingData.map { it.toNote() }
+        }
+    }
+
     /** Generate a unique negative ID for offline notes. */
     private fun generateLocalId(): Int {
-        // Use a random positive int and negate it to avoid collision with server IDs
         return -Random.nextInt(1, Int.MAX_VALUE)
     }
 
@@ -148,15 +170,12 @@ class NoteRepositoryImpl @Inject constructor(
         for (note in unsynced) {
             try {
                 if (note.isDeleted) {
-                    // Delete remotely if the note exists on the server
                     if (note.id > 0) {
                         api.deleteNote(note.id)
                     }
-                    // Always remove locally after syncing a deletion
                     noteDao.deleteNote(note)
                 } else {
                     if (note.id > 0) {
-                        // Update existing remote note
                         val response = api.updateNote(
                             note.id,
                             UpdateNoteRequest(note.title, note.description)
@@ -164,12 +183,10 @@ class NoteRepositoryImpl @Inject constructor(
                         val updated = response.toNoteEntity()
                         noteDao.updateNote(updated)
                     } else {
-                        // Create a new note remotely
                         val response = api.createNote(
                             CreateNoteRequest(note.title, note.description)
                         )
                         val newEntity = response.toNoteEntity()
-                        // Remove the old unsynced version and insert the synced one
                         noteDao.deleteNote(note)
                         noteDao.insertNote(newEntity)
                     }

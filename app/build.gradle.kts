@@ -84,4 +84,18 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
+    // Jetpack Paging (required for paginated note list)
+
+    implementation("androidx.paging:paging-runtime:3.2.1")
+    val room_version = "2.6.1" // <-- Make sure this is your current Room version!
+
+    implementation("androidx.room:room-runtime:$room_version")
+    // For Kotlin, you use kapt instead of annotationProcessor
+    kapt("androidx.room:room-compiler:$room_version")
+    // Optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+
+    // 👇 THIS IS THE LINE YOU NEED TO ADD 👇
+    implementation("androidx.room:room-paging:$room_version")
 }
