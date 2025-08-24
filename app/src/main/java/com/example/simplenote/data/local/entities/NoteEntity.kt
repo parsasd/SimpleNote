@@ -14,5 +14,8 @@ data class NoteEntity(
     val updatedAt: Date,
     val creatorName: String,
     val creatorUsername: String,
-    val isSynced: Boolean = true
+    /** Whether this note has been synced to the remote API */
+    val isSynced: Boolean = true,
+    /** Marks notes scheduled for deletion when offline; filtered out of queries */
+    val isDeleted: Boolean = false
 )

@@ -6,13 +6,20 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface NoteDao {
-    @Query("SELECT * FROM notes ORDER BY updatedAt DESC")
+    /** Get all non-deleted notes, ordered by most recently updated. */
+    @Query("SELECT * FROM notes WHERE isDeleted = 0 ORDER BY updatedAt DESC")
     fun getAllNotes(): Flow<List<NoteEntity>>
 
-    @Query("SELECT * FROM notes WHERE id = :id")
+    /** Get a single non-deleted note by ID. */
+    @Query("SELECT * FROM notes WHERE id = :id AND isDeleted = 0")
     suspend fun getNoteById(id: Int): NoteEntity?
 
-    @Query("SELECT * FROM notes WHERE title LIKE :query OR description LIKE :query ORDER BY updatedAt DESC")
+    /** Search title/description for non-deleted notes. */
+    @Query(
+        "SELECT * FROM notes " +
+                "WHERE (title LIKE :query OR description LIKE :query) AND isDeleted = 0 " +
+                "ORDER BY updatedAt DESC"
+    )
     fun searchNotes(query: String): Flow<List<NoteEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -30,6 +37,7 @@ interface NoteDao {
     @Query("DELETE FROM notes")
     suspend fun deleteAllNotes()
 
+    /** Return all locally changed notes (unsynced or marked deleted). */
     @Query("SELECT * FROM notes WHERE isSynced = 0")
     suspend fun getUnsyncedNotes(): List<NoteEntity>
 }

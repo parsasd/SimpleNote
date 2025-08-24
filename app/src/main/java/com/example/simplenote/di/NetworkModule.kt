@@ -67,7 +67,7 @@ object NetworkModule {
     @Named("authorizedApi")
     fun provideSimpleNoteApi(@Named("authorizedOkHttpClient") okHttpClient: OkHttpClient): SimpleNoteApi {
         return Retrofit.Builder()
-            .baseUrl("http:/172.20.10.4:8000/") // <-- IMPORTANT: Make sure this is your computer's IP address
+            .baseUrl("http://192.168.8.162:8000/") // <-- IMPORTANT: Make sure this is your computer's IP address
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -79,7 +79,7 @@ object NetworkModule {
     @Named("unauthorizedApi")
     fun provideUnauthorizedSimpleNoteApi(@Named("unauthorizedOkHttpClient") okHttpClient: OkHttpClient): SimpleNoteApi {
         return Retrofit.Builder()
-            .baseUrl("http://172.20.10.4:8000/") // <-- IMPORTANT: Make sure this is your computer's IP address
+            .baseUrl("http://192.168.8.162:8000/") // <-- IMPORTANT: Make sure this is your computer's IP address
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

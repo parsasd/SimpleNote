@@ -1,7 +1,7 @@
-// File: presentation/home/NotesAdapter.kt
 package com.example.simplenote.presentation.home
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.simplenote.databinding.ItemNoteBinding
 import com.example.simplenote.domain.model.Note
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 
 class NotesAdapter(
-    private val onItemClick: (Note) -> Unit
+    private val onItemClick: (Note) -> Unit,
+    private val onItemLongClick: (Note, View) -> Unit = { _, _ -> }
 ) : ListAdapter<Note, NotesAdapter.NoteViewHolder>(NoteDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -21,17 +22,15 @@ class NotesAdapter(
             parent,
             false
         )
-        return NoteViewHolder(binding, onItemClick)
+        return NoteViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    class NoteViewHolder(
-        private val binding: ItemNoteBinding,
-        private val onItemClick: (Note) -> Unit
-    ) : RecyclerView.ViewHolder(binding.root) { // Corrected to binding.root
+    inner class NoteViewHolder(private val binding: ItemNoteBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(note: Note) {
             with(binding) {
@@ -40,8 +39,12 @@ class NotesAdapter(
                 tvDate.text = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
                     .format(note.updatedAt)
 
-                root.setOnClickListener { // Corrected to binding.root.setOnClickListener
+                root.setOnClickListener {
                     onItemClick(note)
+                }
+                root.setOnLongClickListener {
+                    onItemLongClick(note, root)
+                    true
                 }
             }
         }
@@ -51,7 +54,6 @@ class NotesAdapter(
         override fun areItemsTheSame(oldItem: Note, newItem: Note): Boolean {
             return oldItem.id == newItem.id
         }
-
         override fun areContentsTheSame(oldItem: Note, newItem: Note): Boolean {
             return oldItem == newItem
         }
